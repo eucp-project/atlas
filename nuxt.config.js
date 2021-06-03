@@ -3,7 +3,7 @@ export default {
   target: 'static',
   ssr: false,
   router: {
-    base: '/eucp-project/atlas'
+    base: '/atlas'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
