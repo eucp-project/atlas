@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col m-0 p-2 h-screen">
+  <div class="container mx-auto m-0 p-2 h-screen max-w-4xl self-center">
     <div class="flex place-content-center m-4">
       <img src="~/static/eucp_logo.png" alt="EUCP Logo">
       <h1 class="text-2xl">
@@ -21,9 +21,11 @@
       >
     </div>
     <div class="flex place-content-end space-x-3">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        More info
-      </button>
+      <nuxt-link to="/about">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          More info
+        </button>
+      </nuxt-link>
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Download data
       </button>
