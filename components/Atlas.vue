@@ -12,6 +12,7 @@
       <Dropdown v-model="selectedPercentile" :options="percentiles" />
       <Dropdown v-model="selectedDataset" :options="datasets" />
       <Dropdown v-model="selectedMethod" :options="methods" />
+      <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
     </div>
     <div class="flex place-content-center">
       <img
@@ -22,11 +23,21 @@
     </div>
     <div class="flex place-content-end space-x-3">
       <nuxt-link to="/about">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button
+          class="bg-transparent hover:bg-gray-500 active:bg-gray-700
+        text-gray-700 font-semibold hover:text-white py-2 px-4 border
+        border-gray-500 hover:border-transparent rounded-full
+        focus:outline-none"
+        >
           More info
         </button>
       </nuxt-link>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <button
+        class="bg-transparent hover:bg-gray-500 active:bg-gray-700
+        text-gray-700 font-semibold hover:text-white py-2 px-4 border
+        border-gray-500 hover:border-transparent rounded-full
+        focus:outline-none"
+      >
         Download data
       </button>
     </div>
@@ -42,6 +53,7 @@ export default {
       selectedSeason: 'djf',
       selectedVariable: 'tas',
       selectedMethod: 'climwip',
+      selectedConstrained: 'constrained',
       datasets: {
         cmip6: 'CMIP6'
       },
@@ -62,6 +74,11 @@ export default {
       },
       methods: {
         climwip: 'ClimWIP'
+      },
+      constrainedOptions: {
+        constrained: 'Constrained',
+        unconstrained: 'Unconstrained',
+        diff: 'Difference'
       }
     }
   }
