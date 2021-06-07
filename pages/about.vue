@@ -18,16 +18,6 @@
       consequuntur rem ea explicabo obcaecati, ad quis inventore dolore ullam
       saepe ipsum veritatis sunt totam et quisquam!
     </p>
-
-    <nuxt-link to="/">
-      <button
-        class="bg-transparent hover:bg-gray-500 active:bg-gray-700
-        text-gray-700 font-semibold hover:text-white py-2 px-4 border
-        border-gray-500 hover:border-transparent rounded-full
-        focus:outline-none"
-      >
-        Back
-      </button>
-    </nuxt-link>
+    <Button :text="`Back`" :target="`/`" />
   </div>
 </template>

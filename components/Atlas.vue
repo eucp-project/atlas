@@ -22,24 +22,8 @@
       >
     </div>
     <div class="flex place-content-end space-x-3">
-      <nuxt-link to="/about">
-        <button
-          class="bg-transparent hover:bg-gray-500 active:bg-gray-700
-        text-gray-700 font-semibold hover:text-white py-2 px-4 border
-        border-gray-500 hover:border-transparent rounded-full
-        focus:outline-none"
-        >
-          More info
-        </button>
-      </nuxt-link>
-      <button
-        class="bg-transparent hover:bg-gray-500 active:bg-gray-700
-        text-gray-700 font-semibold hover:text-white py-2 px-4 border
-        border-gray-500 hover:border-transparent rounded-full
-        focus:outline-none"
-      >
-        Download data
-      </button>
+      <Button :text="`More info`" :target="`/about`" />
+      <Button :text="`Download data`" />
     </div>
   </div>
 </template>
