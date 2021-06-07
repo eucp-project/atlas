@@ -53,7 +53,7 @@ export default {
       selectedSeason: 'djf',
       selectedVariable: 'tas',
       selectedMethod: 'climwip',
-      selectedConstrained: 'constrained',
+      selectedConstrained: 'diff',
       datasets: {
         cmip6: 'CMIP6'
       },
