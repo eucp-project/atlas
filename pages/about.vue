@@ -1,32 +1,25 @@
 <template>
-  <div class="container mx-auto p-4 h-screen self-center">
-    <div class="flex p-4">
+  <div class="container mx-auto m-0 p-2 h-screen max-w-4xl self-center">
+    <div class="flex place-content-center bg-gray-100 m-4">
       <NuxtLink :to="`/`">
-            <img src="~/static/eucp_logo.png" alt="EUCP Logo">
+      <img src="~/static/eucp_logo.png" alt="EUCP Logo" class="m-4">
       </NuxtLink>
+      <h1 class="text-2xl p-2 align-middle mt-2 ml-4">
+        Comparing Constrained Future European Climate Projections
+      </h1>
     </div>
-    <div class="bg-gray-100 p-4 text-4xl">
-      <p>
-        Title
-      </p>
-    </div>
-    <div class="pl-4 mb-0 text-gray-400">
-      <p>
-        Publications
-      </p>
-    </div>
-    <div class="flex flex-row mb-8">
-      <div class="pl-4 w-1/3 no-wrap text-left">
+    <div class="flex flex-row mb-8 mt-2 p-4">
+      <div class="pl-4 w-1/2 no-wrap text-left">
         <div>
-          <p>
-            Authors
-          </p>
           <p>
             Citation info
           </p>
+          <p>
+            Links
+          </p>
         </div>
-        <div class ="space-y-6 space-y-reverse">
-          <h2 class ="text-xl mt-8">
+        <div class="space-y-6 space-y-reverse">
+          <h2 class="text-xl mt-8">
             Highlights
           </h2>
           <p>
@@ -36,7 +29,7 @@
           </p>
           <p>
             <em>
-              Background
+              Work package 2
               <br>
             </em>
             Culpa sedvitae nostrum quod ipsum facilis aliquam nihil doloribus,
@@ -46,7 +39,7 @@
           </p>
           <p>
             <em>
-              Results
+              Objectives
               <br>
             </em>
             Aut consequatur vero, labore cum illum nisi! Adipisci reiciendis
@@ -57,7 +50,7 @@
           </p>
           <p>
             <em>
-              Methods
+              Collaborators
               <br>
             </em>
             Accusantium non maiores iure quis quidem fugit qui commodi
@@ -68,7 +61,7 @@
           </p>
           <p>
             <em>
-              Policy relevance
+              Science of climate projections
               <br>
             </em>
             A maiores consequuntur rem ea explicabo obcaecati, ad quis
@@ -77,9 +70,18 @@
           </p>
         </div>
       </div>
-      <div class="p-4 w-1/3 no-wrap text-left bg-blue-900 p-4 text-white">
+      <div class="p-4 w-1/2 ml-8 no-wrap text-left bg-blue-900 text-white space-y-6">
+        <h2 class="text-xl mt-2">
+          Publications
+        </h2>
         <p>
-          Abstract
+          Comparing Methods to Constrain Future European Climate Projections Using a Consistent Framework
+          <strong>
+            <a href="https://doi.org/10.1175/JCLI-D-19-0953.1">https://doi.org/10.1175/JCLI-D-19-0953.1</a>
+          </strong>
+        </p>
+        <p>
+          Another paper
         </p>
       </div>
     </div>
