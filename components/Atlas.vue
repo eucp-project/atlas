@@ -16,7 +16,7 @@
     </div>
     <div class="flex overflow-auto place-content-center">
       <img
-        class="object-contain h-96 w-auto max-w-full max-h-full"
+        class="object-contain w-auto max-w-full max-h-full"
         :src="require(`~/assets/sample_figures/eur_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc.png`)"
         alt="Map of climate projections for Europe"
       >
