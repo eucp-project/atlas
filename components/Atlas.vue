@@ -3,7 +3,7 @@
     <div class="flex place-content-center m-4">
       <img src="~/static/eucp_logo.png" alt="EUCP Logo">
       <h1 class="text-2xl">
-        EUCP WP2 - Atlas of constrained climate projections</h2>
+        EUCP WP2 - Atlas of constrained climate projections
       </h1>
     </div>
     <div class="flex place-content-center space-x-3">
