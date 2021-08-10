@@ -1,10 +1,7 @@
 <template>
-  <div class="container mx-auto m-0 p-2 h-screen max-w-4xl self-center">
+  <div>
     <div class="flex place-content-center bg-gray-100 m-4">
-      <NuxtLink :to="`/`">
-        <img src="~/static/eucp_logo.png" alt="EUCP Logo" class="m-4">
-      </NuxtLink>
-      <h1 class="text-2xl p-2 align-middle mt-2 ml-4">
+      <h1 class="text-2xl p-6 align-middle">
         Comparing Constrained Future European Climate Projections
       </h1>
     </div>
