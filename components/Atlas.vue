@@ -5,7 +5,7 @@
         EUCP WP2 - Atlas of constrained climate projections</h2>
       </h1>
     </div>
-    <div class="place-content-center space-x-1 space-y-3">
+    <div class="flex place-content-center space-x-1">
       <Dropdown v-model="selectedVariable" :options="variables" />
       <Dropdown v-model="selectedSeason" :options="seasons" />
       <Dropdown v-model="selectedPercentile" :options="percentiles" />
