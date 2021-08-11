@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto m-0 p-2 h-screen">
+  <div class="container md:mx-auto m-0 p-2 md:h-screen">
     <div class="flex m-4 justify-around">
       <NuxtLink :to="`/`">
         <img src="~/static/eucp_logo.png" alt="EUCP Logo">
