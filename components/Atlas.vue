@@ -1,26 +1,28 @@
 <template>
   <div>
     <div class="flex place-content-center m-4">
-      <h1 class="text-2xl">
+      <h1 class="text-2xl align-middle">
         EUCP WP2 - Atlas of constrained climate projections</h2>
       </h1>
     </div>
-    <div class="flex place-content-center space-x-1">
+    <div class="flex flex-col place-content-center items-center">
+      <div class="space-x-1">
       <Dropdown v-model="selectedVariable" :options="variables" />
       <Dropdown v-model="selectedSeason" :options="seasons" />
       <Dropdown v-model="selectedPercentile" :options="percentiles" />
       <Dropdown v-model="selectedDataset" :options="datasets" />
       <Dropdown v-model="selectedMethod" :options="methods" />
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
+      </div>
+      <div>
+        <img
+          style="max-width:890px"
+          :src="require(`~/assets/sample_figures/eur_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc.png`)"
+          alt="Map of climate projections for Europe"
+        >
+      </div>
     </div>
-    <div class="flex overflow-auto place-content-center">
-      <img
-        class="object-contain w-auto max-w-full max-h-full"
-        :src="require(`~/assets/sample_figures/eur_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc.png`)"
-        alt="Map of climate projections for Europe"
-      >
-    </div>
-    <div class="flex place-content-end space-x-3">
+    <div class="flex place-content-center space-x-3">
       <Button :text="`More info`" :target="`/about`" />
       <Button :text="`Download data`" />
     </div>
@@ -67,7 +69,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
