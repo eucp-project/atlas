@@ -14,8 +14,9 @@
       <Dropdown v-model="selectedMethod" :options="methods" />
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
       </div>
-      <div>
+      <div class="overflow-auto">
         <img
+          class="object-contain"
           style="max-width:890px"
           :src="require(`~/assets/sample_figures/eur_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc.png`)"
           alt="Map of climate projections for Europe"
