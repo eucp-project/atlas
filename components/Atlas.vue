@@ -7,12 +7,12 @@
     </div>
     <div class="flex flex-col place-content-center items-center">
       <div class="space-x-1">
-      <Dropdown v-model="selectedVariable" :options="variables" />
-      <Dropdown v-model="selectedSeason" :options="seasons" />
-      <Dropdown v-model="selectedPercentile" :options="percentiles" />
-      <Dropdown v-model="selectedDataset" :options="datasets" />
-      <Dropdown v-model="selectedMethod" :options="methods" />
-      <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
+        <Dropdown v-model="selectedVariable" :options="variables" />
+        <Dropdown v-model="selectedSeason" :options="seasons" />
+        <Dropdown v-model="selectedPercentile" :options="percentiles" />
+        <Dropdown v-model="selectedDataset" :options="datasets" />
+        <Dropdown v-model="selectedMethod" :options="methods" />
+        <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
       </div>
       <div class="overflow-auto">
         <img
