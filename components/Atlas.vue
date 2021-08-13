@@ -1,12 +1,11 @@
 <template>
-  <div class="container mx-auto m-0 p-2 h-screen max-w-4xl self-center">
+  <div>
     <div class="flex place-content-center m-4">
-      <img src="~/static/eucp_logo.png" alt="EUCP Logo">
       <h1 class="text-2xl">
         EUCP WP2 - Atlas of constrained climate projections
       </h1>
     </div>
-    <div class="flex place-content-center space-x-3">
+    <div class="flex place-content-center space-x-1">
       <Dropdown v-model="selectedVariable" :options="variables" />
       <Dropdown v-model="selectedSeason" :options="seasons" />
       <Dropdown v-model="selectedPercentile" :options="percentiles" />
@@ -14,7 +13,7 @@
       <Dropdown v-model="selectedMethod" :options="methods" />
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
     </div>
-    <div class="flex place-content-center">
+    <div class="flex overflow-auto place-content-center">
       <img
         class="h-96"
         :src="require(`~/assets/processed_figures/eur_${selectedMethod}_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc_${selectedConstrained}.png`)"
@@ -69,3 +68,7 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>
