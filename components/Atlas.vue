@@ -2,7 +2,7 @@
   <div>
     <div class="flex place-content-center m-4">
       <h1 class="text-2xl">
-        EUCP WP2 - Atlas of constrained climate projections</h2>
+        EUCP WP2 - Atlas of constrained climate projections
       </h1>
     </div>
     <div class="flex place-content-center space-x-1">
@@ -15,8 +15,8 @@
     </div>
     <div class="flex overflow-auto place-content-center">
       <img
-        class="object-contain h-96 w-auto max-w-full max-h-full"
-        :src="require(`~/assets/sample_figures/eur_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc.png`)"
+        class="h-96"
+        :src="require(`~/assets/processed_figures/eur_${selectedMethod}_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc_${selectedConstrained}.png`)"
         alt="Map of climate projections for Europe"
       >
     </div>
@@ -35,10 +35,11 @@ export default {
       selectedPercentile: '10',
       selectedSeason: 'djf',
       selectedVariable: 'tas',
-      selectedMethod: 'climwip',
-      selectedConstrained: 'diff',
+      selectedMethod: 'ETHZ_ClimWIP',
+      selectedConstrained: 'cons',
       datasets: {
         cmip6: 'CMIP6'
+        // cmip5: 'CMIP5'
       },
       percentiles: {
         10: '10-percentile',
@@ -56,12 +57,12 @@ export default {
         pr: 'Precipitation'
       },
       methods: {
-        climwip: 'ClimWIP'
+        ETHZ_ClimWIP: 'ClimWIP',
+        IPSL_REA: 'REA'
       },
       constrainedOptions: {
-        constrained: 'Constrained',
-        unconstrained: 'Unconstrained',
-        diff: 'Difference'
+        cons: 'Constrained',
+        uncons: 'Unconstrained'
       }
     }
   }
