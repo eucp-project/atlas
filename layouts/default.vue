@@ -13,6 +13,6 @@
         <input class="w-32 h-8 focus:shadow-outline rounded text-sm px-2 pl-4" type="search" placeholder="Search...">
       </div>
     </div>
-    <Nuxt class="flex-grow flex-shrink border-4" />
+    <Nuxt class="flex-grow" />
   </div>
 </template>

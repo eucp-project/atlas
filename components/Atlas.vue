@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col place-content-center items-center min-h-full h-full max-h-full border-4">
+  <div class="flex flex-col place-content-center items-center h-full">
     <h1 class="m-4 text-3xl">
       EUCP WP2 - Atlas of constrained climate projections
     </h1>
@@ -11,12 +11,10 @@
       <Dropdown v-model="selectedMethod" :options="methods" />
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
     </div>
-    <div class="bg-center bg-no-repeat bg-contain flex-shrink flex-grow w-full border-4"  :style="{ backgroundImage: `url(${require('~/assets/sample_figures/eur_' + selectedVariable + '_41-60_' + selectedSeason + '_' + selectedDataset + '_' + selectedPercentile + 'perc.png')})` }" />
-    <!-- <img
-      class="object-contain h-full border-4"
-      :src="require(`~/assets/sample_figures/eur_${selectedVariable}_41-60_${selectedSeason}_${selectedDataset}_${selectedPercentile}perc.png`)"
-      alt="Map of climate projections for Europe"
-    > -->
+    <div
+      class="bg-center bg-no-repeat bg-contain flex-grow w-full"
+      :style="{ backgroundImage: `url(${require('~/assets/sample_figures/eur_' + selectedVariable + '_41-60_' + selectedSeason + '_' + selectedDataset + '_' + selectedPercentile + 'perc.png')})` }"
+    />
     <div class="flex place-content-center space-x-3">
       <Button :text="`More info`" :target="`/about`" />
       <Button :text="`Download data`" />
