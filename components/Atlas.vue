@@ -13,7 +13,7 @@
     </div>
     <div
       class="bg-center bg-no-repeat bg-contain flex-grow w-full"
-      :style="{ backgroundImage: `url(${require('~/assets/sample_figures/eur_' + selectedVariable + '_41-60_' + selectedSeason + '_' + selectedDataset + '_' + selectedPercentile + 'perc.png')})` }"
+      :style="{ backgroundImage: `url(${require('~/assets/processed_figures/eur_' + selectedMethod + '_' + selectedVariable + '_41-60_' + selectedSeason + '_' + selectedDataset + '_' + selectedPercentile + 'perc_' + selectedConstrained + '.png')})` }"
     />
     <div class="flex place-content-center space-x-3">
       <Button :text="`More info`" :target="`/about`" />
@@ -30,10 +30,11 @@ export default {
       selectedPercentile: '10',
       selectedSeason: 'djf',
       selectedVariable: 'tas',
-      selectedMethod: 'climwip',
-      selectedConstrained: 'diff',
+      selectedMethod: 'ETHZ_ClimWIP',
+      selectedConstrained: 'cons',
       datasets: {
         cmip6: 'CMIP6'
+        // cmip5: 'CMIP5'
       },
       percentiles: {
         10: '10-percentile',
@@ -51,12 +52,12 @@ export default {
         pr: 'Precipitation'
       },
       methods: {
-        climwip: 'ClimWIP'
+        ETHZ_ClimWIP: 'ClimWIP',
+        IPSL_REA: 'REA'
       },
       constrainedOptions: {
-        constrained: 'Constrained',
-        unconstrained: 'Unconstrained',
-        diff: 'Difference'
+        cons: 'Constrained',
+        uncons: 'Unconstrained'
       }
     }
   }
