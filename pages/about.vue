@@ -5,7 +5,7 @@
         Comparing Constrained Future European Climate Projections
       </h1>
     </div>
-    <div class="flex flex-row mb-8 mt-2 p-4">
+    <div class="flex flex-row mb-2 mt-2 p-4">
       <div class="pl-4 w-1/2 no-wrap text-left">
         <div>
           <p>
