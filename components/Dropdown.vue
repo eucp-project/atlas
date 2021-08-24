@@ -17,18 +17,30 @@
         fill-rule="nonzero"
       />
     </svg>
-    <select
-      v-model="selectedOption"
-      class="border border-gray-300 rounded-full
-    text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400
-    focus:outline-none appearance-none"
-      @input="event => { $emit('input',
-                               event.target.value) }"
-    >
-      <option v-for="(option, name) in options" :key="name" :value="name">
-        {{ option }}
-      </option>
-    </select>
+    <v-hover
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
+      >
+      <span
+        v-if="hover"
+        class="border border-blue-300 rounded-full
+      text-blue-600 h-10 pl-5 pr-10 bg-white"
+      >
+        Hello
+      </span>
+      <select
+        v-model="selectedOption"
+        class="border border-gray-300 rounded-full cursor-pointer
+      text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400
+      focus:outline-none appearance-none"
+        @input="event => { $emit('input',
+                                event.target.value) }"
+      >
+        <option v-for="(option, name) in options" :key="name" :value="name">
+          {{ option }}
+        </option>
+      </select>
+    </v-hover>
   </div>
 </template>
 
@@ -43,6 +55,7 @@ export default {
   },
   data () {
     return {
+      hover: false,
       selectedOption: null
     }
   },
