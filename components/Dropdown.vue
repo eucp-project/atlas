@@ -20,16 +20,16 @@
     <v-hover
       @mouseover="hover = true"
       @mouseleave="hover = false"
-      >
+    >
       <span
         v-if="hover"
         class="absolute flex items-center bg-white bottom-12 right-0
       border border-gray-100 rounded shadow-lg h-10 w-30"
       >
         <div
-        class="absolute top-7 left-16 bg-white transform rotate-45
-        border-b-3 border-t-0 border-r-3 border-l-0  border-gray-100 p-2">
-        </div>
+          class="absolute top-7 left-16 bg-white transform rotate-45
+        border-b-3 border-t-0 border-r-3 border-l-0  border-gray-100 p-2"
+        />
         <p class="text-gray-600 w-40 text-sm text-center">
           {{ alttext }}
         </p>
@@ -40,7 +40,7 @@
       text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400
       focus:outline-none appearance-none"
         @input="event => { $emit('input',
-                                event.target.value) }"
+                                 event.target.value) }"
       >
         <option v-for="(option, name) in options" :key="name" :value="name">
           {{ option }}
