@@ -23,13 +23,16 @@
       >
       <span
         v-if="hover"
-        class="absolute flex items-center bg-white bottom-10 right-0
+        class="absolute flex items-center bg-white bottom-12 right-0
       border border-gray-100 rounded shadow-lg h-10 w-30"
       >
-      <p class="text-gray-600 w-40 text-sm text-center">
-        {{ alttext }}
-      </p>
-
+        <div
+        class="absolute top-7 left-16 bg-white transform rotate-45
+        border-b-3 border-t-0 border-r-3 border-l-0  border-gray-100 p-2">
+        </div>
+        <p class="text-gray-600 w-40 text-sm text-center">
+          {{ alttext }}
+        </p>
       </span>
       <select
         v-model="selectedOption"
