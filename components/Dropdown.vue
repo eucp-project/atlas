@@ -24,7 +24,7 @@
       <span
         v-if="hover"
         class="absolute flex items-center bg-white bottom-10 right-0
-      border border-gray-300 rounded shadow-md h-10 w-30 text-indigo-600"
+      border border-gray-100 rounded shadow-lg h-10 w-30"
       >
       <p class="text-gray-600 w-40 text-sm text-center">
         {{ alttext }}
