@@ -23,10 +23,13 @@
       >
       <span
         v-if="hover"
-        class="border border-blue-300 rounded-full
-      text-blue-600 h-10 pl-5 pr-10 bg-white"
+        class="absolute flex items-center bg-white bottom-10 right-0
+      border border-gray-300 rounded shadow-md h-10 w-30 text-indigo-600"
       >
-        Hello
+      <p class="text-gray-600 w-40 text-sm text-center">
+        {{ alttext }}
+      </p>
+
       </span>
       <select
         v-model="selectedOption"
@@ -51,7 +54,8 @@ export default {
     options: {
       type: Object,
       required: true
-    }
+    },
+    alttext: null
   },
   data () {
     return {

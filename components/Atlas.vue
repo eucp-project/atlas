@@ -4,12 +4,12 @@
       EUCP WP2 - Atlas of constrained climate projections
     </h1>
     <div class="space-x-1">
-      <Dropdown v-model="selectedVariable" :options="variables" />
-      <Dropdown v-model="selectedSeason" :options="seasons" />
-      <Dropdown v-model="selectedPercentile" :options="percentiles" />
-      <Dropdown v-model="selectedDataset" :options="datasets" />
-      <Dropdown v-model="selectedMethod" :options="methods" />
-      <Dropdown v-model="selectedConstrained" :options="constrainedOptions" />
+      <Dropdown v-model="selectedVariable" :options="variables" alttext="Select a variable" />
+      <Dropdown v-model="selectedSeason" :options="seasons" alttext="Select a season" />
+      <Dropdown v-model="selectedPercentile" :options="percentiles" alttext="Select a percentiles" />
+      <Dropdown v-model="selectedDataset" :options="datasets" alttext="Select a dataset" />
+      <Dropdown v-model="selectedMethod" :options="methods" alttext="Select a method" />
+      <Dropdown v-model="selectedConstrained" :options="constrainedOptions" alttext="Select a constrained" />
     </div>
     <div
       class="bg-center bg-no-repeat bg-contain flex-grow w-full"
