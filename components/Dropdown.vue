@@ -23,14 +23,14 @@
     >
       <span
         v-if="hover"
-        class="absolute flex items-center bg-white bottom-12 right-0
-      border border-gray-100 rounded shadow-lg h-10 w-30"
+        class="absolute flex justify-center items-center bg-white bottom-14 right-0
+      border border-gray-100 rounded shadow-lg h-20 w-40"
       >
         <div
-          class="absolute top-7 left-16 bg-white transform rotate-45
-        border-b-3 border-t-0 border-r-3 border-l-0  border-gray-100 p-2"
+          class="absolute custom-top bg-white transform rotate-45 z-0
+        border-b-3 border-t-0 border-r-3 border-l-0 border-gray-100 p-2"
         />
-        <p class="text-gray-600 w-40 text-sm text-center">
+        <p class="text-gray-600 w-30 text-sm text-center m-1 p-1 z-10">
           {{ alttext }}
         </p>
       </span>
@@ -76,3 +76,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .custom-top {
+    top: 4.3rem;
+  }
+</style>
