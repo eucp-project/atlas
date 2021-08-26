@@ -17,7 +17,7 @@
         fill-rule="nonzero"
       />
     </svg>
-    <v-hover>
+    <div>
       <span
         v-if="hover"
         class="absolute flex justify-center items-center bg-white bottom-14 right-0
@@ -45,7 +45,7 @@
           {{ option }}
         </option>
       </select>
-    </v-hover>
+    </div>
   </div>
 </template>
 
