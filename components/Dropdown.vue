@@ -17,18 +17,36 @@
         fill-rule="nonzero"
       />
     </svg>
-    <select
-      v-model="selectedOption"
-      class="border border-gray-300 rounded-full
-    text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400
-    focus:outline-none appearance-none"
-      @input="event => { $emit('input',
-                               event.target.value) }"
-    >
-      <option v-for="(option, name) in options" :key="name" :value="name">
-        {{ option }}
-      </option>
-    </select>
+    <div>
+      <span
+        v-if="hover"
+        id="popup"
+        class="absolute flex justify-center items-center bg-white bottom-14 right-0
+      border border-gray-100 rounded shadow-lg h-20 w-40"
+      >
+        <div
+          class="absolute custom-top bg-white transform rotate-45 z-0
+        border-b-3 border-t-0 border-r-3 border-l-0 border-gray-100 p-2"
+        />
+        <p class="text-gray-600 w-30 text-sm text-center m-1 p-1 z-10">
+          {{ alttext }}
+        </p>
+      </span>
+      <select
+        v-model="selectedOption"
+        class="border border-gray-300 rounded-full cursor-pointer
+      text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400
+      focus:outline-none appearance-none"
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
+        @input="event => { $emit('input',
+                                 event.target.value) }"
+      >
+        <option v-for="(option, name) in options" :key="name" :value="name">
+          {{ option }}
+        </option>
+      </select>
+    </div>
   </div>
 </template>
 
@@ -39,10 +57,12 @@ export default {
     options: {
       type: Object,
       required: true
-    }
+    },
+    alttext: null
   },
   data () {
     return {
+      hover: false,
       selectedOption: null
     }
   },
@@ -56,3 +76,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .custom-top {
+    top: 4.3rem;
+  }
+</style>
