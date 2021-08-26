@@ -17,10 +17,7 @@
         fill-rule="nonzero"
       />
     </svg>
-    <v-hover
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
-    >
+    <v-hover>
       <span
         v-if="hover"
         class="absolute flex justify-center items-center bg-white bottom-14 right-0
