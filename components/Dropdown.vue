@@ -39,6 +39,8 @@
         class="border border-gray-300 rounded-full cursor-pointer
       text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400
       focus:outline-none appearance-none"
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
         @input="event => { $emit('input',
                                  event.target.value) }"
       >
