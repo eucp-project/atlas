@@ -20,6 +20,7 @@
     <div>
       <span
         v-if="hover"
+        id="popup"
         class="absolute flex justify-center items-center bg-white bottom-14 right-0
       border border-gray-100 rounded shadow-lg h-20 w-40"
       >
