@@ -3,7 +3,7 @@ Update content of the Atlas - generate maps based on the preprocessed netcdf dat
 Function        : Plot maps in a uniform way based on the netcdf files
 Author          : Team BETA
 First Built     : 2021.08.12
-Last Update     : 2021.08.13
+Last Update     : 2021.09.06
 Library         : os, glob, netcdf4, matplotlib, cartopy, argparse
 Description     : In this notebook serves to extract netcdf data and generate maps
                   for Atlas page.
@@ -12,6 +12,7 @@ Note            : All the maps are generated in a uniform way.
 """
 
 import os
+from pathlib import Path
 import argparse
 import glob
 from netCDF4 import Dataset
@@ -26,7 +27,7 @@ def files(datapath, output_path):
     Generate maps in a uniform way based on the netcdf files.
     """
     # get the list of .nc files in the target directory
-    #nc_files = glob.glob(os.path.join(datapath,"*.nc"))
+    #nc_files = glob.glob(Path(datapath,"*.nc"))
     all_files = os.listdir(datapath)
     nc_files = [x for x in all_files if ".nc" in x] # get files with .nc
     # plot maps
@@ -39,7 +40,7 @@ def prepareData(nc_file, datapath, output_path):
     Extract data and names for plotting.
     """
     # extract data - weighted (constrained) and unweighted (unconstrained)
-    dataset = Dataset(os.path.join(datapath, nc_file))
+    dataset = Dataset(Path(datapath, nc_file))
     data_pr = dataset['pr'][:]
     data_tas = dataset['tas'][:]
     # key dictionary to get dimensions
@@ -102,7 +103,7 @@ def plot(data, lat, lon, variable, project, model,
     elif variable == "tas":
         ax.set_title(f'EUR temperature difference (K) {percentile}perc', fontsize=20)
     plt.show()
-    fig.savefig(os.path.join(output_path,
+    fig.savefig(Path(output_path,
                 f"eur_{model}_{method}_{variable}_41-60_{season.lower()}_{project.lower()}_{percentile}perc_{cons[constrained]}.png"),
                 dpi=150)
     plt.close(fig)

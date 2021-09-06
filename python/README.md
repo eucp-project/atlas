@@ -12,7 +12,7 @@ The folder contains multiple files to handle these tasks:
 - [`Preprocess IPSL-REA data`](cleanup_IPSL_REA_atlas_netcdf_.ipynb)
 
 *Plot maps using preprocessed data (batch processing)*
-- [`Preprocess ETHZ-ClimWIP data`](maps_creator_atlas_data.py)
+- [`Plot maps`](maps_creator_atlas_data.py)
 
 *Tweak plot settings and preview maps using raw model data*
 - [`Preview map of relative precipitation`](maps_prototype_prec.ipynb)
