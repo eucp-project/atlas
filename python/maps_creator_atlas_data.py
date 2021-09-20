@@ -3,7 +3,7 @@ Update content of the Atlas - generate maps based on the preprocessed netcdf dat
 Function        : Plot maps in a uniform way based on the netcdf files
 Author          : Team BETA
 First Built     : 2021.08.12
-Last Update     : 2021.09.17
+Last Update     : 2021.09.20
 Library         : os, glob, netcdf4, matplotlib, cartopy, argparse
 Description     : In this notebook serves to extract netcdf data and generate maps
                   for Atlas page.
@@ -42,8 +42,14 @@ def prepareData(nc_file, datapath, output_path):
     """
     # extract data - weighted (constrained) and unweighted (unconstrained)
     dataset = Dataset(Path(datapath, nc_file))
-    data_pr = dataset['pr'][:]
-    data_tas = dataset['tas'][:]
+    try:
+        data_pr = dataset['pr'][:]
+    except:
+        pass
+    try:
+        data_tas = dataset['tas'][:]
+    except:
+        pass
     # key dictionary to get dimensions
     percentile = dataset['percentile'][:]
     constrained = dataset['constrained'][:]
@@ -62,14 +68,20 @@ def prepareData(nc_file, datapath, output_path):
     for s in season:
         for c in constrained:
             for p in percentile:
-                data_pr = dataset['pr'][key_s[s],key_c[c],key_p[p],:,:]
-                data_tas = dataset['tas'][key_s[s],key_c[c],key_p[p],:,:]
-                # plot temperature
-                plot(data_tas, lat, lon, "tas", project,
-                     method, s, c, p, output_path)
-                # plot precipitation
-                plot(data_pr, lat, lon, "pr", project,
-                     method, s, c, p, output_path)
+                try:
+                    data_pr = dataset['pr'][key_s[s],key_c[c],key_p[p],:,:]
+                    # plot precipitation
+                    plot(data_pr, lat, lon, "pr", project,
+                         method, s, c, p, output_path)
+                except:
+                    pass
+                try:
+                    data_tas = dataset['tas'][key_s[s],key_c[c],key_p[p],:,:]
+                    # plot temperature
+                    plot(data_tas, lat, lon, "tas", project,
+                         method, s, c, p, output_path)
+                except:
+                    pass
 
 def plot(data, lat, lon, variable, project, method,
          season, constrained, percentile, output_path):
@@ -102,7 +114,7 @@ def plot(data, lat, lon, variable, project, method,
     if variable == "pr":
         ax.set_title("\n".join(wrap(f'{method} {cons[constrained]} {season.lower()} relative precipitation projections (%) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
     elif variable == "tas":
-        ax.set_title("\n".join(wrap(f'{method} {cons[constrained]} {season.lower()} temperature projections (K) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
+        ax.set_title("\n".join(wrap(f'{method} {cons[constrained]} {season.lower()} temperature projections (degC) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
     #plt.show()
     fig.savefig(Path(output_path,
                 f"eur_{method}_{variable}_41-60_{season.lower()}_{project.lower()}_{percentile}perc_{cons[constrained]}.png"),
