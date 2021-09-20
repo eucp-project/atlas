@@ -30,7 +30,7 @@ export default {
       selectedPercentile: '10',
       selectedSeason: 'djf',
       selectedVariable: 'tas',
-      selectedMethod: 'ETHZ_ClimWIP',
+      selectedMethod: 'ClimWIP',
       selectedConstrained: 'cons',
       datasets: {
         cmip6: 'CMIP6'
@@ -52,8 +52,8 @@ export default {
         pr: 'Precipitation'
       },
       methods: {
-        ETHZ_ClimWIP: 'ClimWIP',
-        IPSL_REA: 'REA'
+        ClimWIP: 'ClimWIP',
+        REA: 'REA'
       },
       constrainedOptions: {
         cons: 'Constrained',
