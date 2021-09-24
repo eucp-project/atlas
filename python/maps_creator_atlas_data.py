@@ -18,6 +18,7 @@ from netCDF4 import Dataset
 import matplotlib
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
+from textwrap import wrap
 # Generate images without having a window appear
 matplotlib.use('Agg')
 
@@ -40,8 +41,14 @@ def prepareData(nc_file, datapath, output_path):
     """
     # extract data - weighted (constrained) and unweighted (unconstrained)
     dataset = Dataset(os.path.join(datapath, nc_file))
-    data_pr = dataset['pr'][:]
-    data_tas = dataset['tas'][:]
+    try:
+        data_pr = dataset['pr'][:]
+    except:
+        pass
+    try:
+        data_tas = dataset['tas'][:]
+    except:
+        pass
     # key dictionary to get dimensions
     percentile = dataset['percentile'][:]
     constrained = dataset['constrained'][:]
@@ -60,14 +67,20 @@ def prepareData(nc_file, datapath, output_path):
     for s in season:
         for c in constrained:
             for p in percentile:
-                data_pr = dataset['pr'][key_s[s],key_c[c],key_p[p],:,:]
-                data_tas = dataset['tas'][key_s[s],key_c[c],key_p[p],:,:]
-                # plot temperature
-                plot(data_tas, lat, lon, "tas", project,
-                     model, method, s, c, p, output_path)
-                # plot precipitation
-                plot(data_pr, lat, lon, "pr", project,
-                     model, method, s, c, p, output_path)
+                try:
+                    data_pr = dataset['pr'][key_s[s],key_c[c],key_p[p],:,:]
+                    # plot precipitation
+                    plot(data_pr, lat, lon, "pr", project,
+                         method, s, c, p, output_path)
+                except:
+                    pass
+                try:
+                    data_tas = dataset['tas'][key_s[s],key_c[c],key_p[p],:,:]
+                    # plot temperature
+                    plot(data_tas, lat, lon, "tas", project,
+                         method, s, c, p, output_path)
+                except:
+                    pass
 
 def plot(data, lat, lon, variable, project, model,
          method, season, constrained, percentile, output_path):
@@ -91,19 +104,19 @@ def plot(data, lat, lon, variable, project, model,
     gl.xlabel_style = {'size': 20, 'color': 'black'}
     gl.ylabel_style = {'size': 20, 'color': 'black'}
     if variable == "pr":
-        cs = plt.pcolormesh(lon, lat, data, cmap="BrBG") #vmin=-100, vmax=50)
+        cs = plt.pcolormesh(lon, lat, data, cmap="BrBG", vmin=-50, vmax=50)
     elif variable == "tas":
-        cs = plt.pcolormesh(lon, lat, data, cmap="coolwarm")
+        cs = plt.pcolormesh(lon, lat, data, cmap="Reds", vmin=0, vmax=5)
     cbar = fig.colorbar(cs, extend='both', orientation='vertical',
                         shrink =0.8, pad=0.08, spacing="uniform")
     cbar.ax.tick_params(labelsize = 20)
     if variable == "pr":
-        ax.set_title(f'EUR relative precipitation difference (%) {percentile}perc', fontsize=20)
+        ax.set_title("\n".join(wrap(f'{method} {cons[constrained]} {season.lower()} relative precipitation projections (%) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
     elif variable == "tas":
-        ax.set_title(f'EUR temperature difference (K) {percentile}perc', fontsize=20)
+        ax.set_title("\n".join(wrap(f'{method} {cons[constrained]} {season.lower()} temperature projections (degC) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
     plt.show()
     fig.savefig(os.path.join(output_path,
-                f"eur_{model}_{method}_{variable}_41-60_{season.lower()}_{project.lower()}_{percentile}perc_{cons[constrained]}.png"),
+                f"eur_{method}_{variable}_41-60_{season.lower()}_{project.lower()}_{percentile}perc_{cons[constrained]}.png"),
                 dpi=150)
     plt.close(fig)
 
