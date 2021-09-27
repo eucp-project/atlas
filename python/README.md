@@ -5,6 +5,18 @@ The scripts and notebooks contained in this folder are used to generate content 
 - Preprocess model outputs (.nc) and prepare the data for plotting
 - Plot maps in a uniform way based on the preprocessed netcdf files
 
+The model outputs are preprocessed and saved as netcdf4 files, following the format:
+**coordinates:**
+- lon (lon) (float64) [-10, ..., 40]
+- lat (lat) (float64) [30, ..., 75]
+- percentile (percentile) (int64) [10, 25, 50, 75, 90]
+- constrained (constrained) (int64) [1, 0]
+- season (season) (object) ['DJF', 'JJA']
+
+**variables**
+- tas (season, constrained, percentile, lat, lon) (float64)
+- pr (season, constrained, percentile, lat, lon) (float64)
+
 The folder contains multiple files to handle these tasks:
 
 *Preprocess netCDF data from different models with different methods*
