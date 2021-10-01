@@ -46,11 +46,11 @@ def prepareData(nc_file, datapath, output_path):
     dataset = Dataset(Path(datapath, nc_file))
     try:
         data_pr = dataset['pr'][:]
-    except:
+    except IndexError:
         pass
     try:
         data_tas = dataset['tas'][:]
-    except:
+    except IndexError:
         pass
     # key dictionary to get dimensions
     percentile = dataset['percentile'][:]
@@ -75,7 +75,7 @@ def prepareData(nc_file, datapath, output_path):
                     # plot precipitation
                     plot(data_pr, lat, lon, "pr", project,
                          method, s, c, p, output_path)
-                except:
+                except IndexError:
                     pass
                 try:
                     data_tas = dataset['tas'][key_s[s],
@@ -83,7 +83,7 @@ def prepareData(nc_file, datapath, output_path):
                     # plot temperature
                     plot(data_tas, lat, lon, "tas", project,
                          method, s, c, p, output_path)
-                except:
+                except IndexError:
                     pass
 
 
