@@ -3,7 +3,7 @@ Update content of the Atlas - generate maps based on the preprocessed netcdf dat
 Function        : Plot maps in a uniform way based on the netcdf files
 Author          : Team BETA
 First Built     : 2021.08.12
-Last Update     : 2021.09.20
+Last Update     : 2021.10.01
 Library         : os, glob, netcdf4, matplotlib, cartopy, argparse
 Description     : In this notebook serves to extract netcdf data and generate maps
                   for Atlas page.
@@ -29,7 +29,7 @@ def files(datapath, output_path):
     Generate maps in a uniform way based on the netcdf files.
     """
     # get the list of .nc files in the target directory
-    #nc_files = glob.glob(Path(datapath,"*.nc"))
+    # nc_files = glob.glob(Path(datapath,"*.nc"))
     all_files = os.listdir(datapath)
     nc_files = [x for x in all_files if ".nc" in x]  # get files with .nc
     # plot maps
@@ -61,25 +61,24 @@ def prepareData(nc_file, datapath, output_path):
     key_s = dict(zip(season, range(len(season))))
     # string operations for naming
     project = nc_file.split('_')[-1][:-3]
-    #institute = nc_file.split('_')[1]
+    # institute = nc_file.split('_')[1]
     method = nc_file.split('_')[2]
     # latitudes and longitudes
     lat = dataset['lat'][:]
     lon = dataset['lon'][:]
     # loop
-    for s in season:
-        for c in constrained:
-            for p in percentile:
+    for i, s in enumerate(season):
+        for j, c in enumerate(constrained):
+            for k, p in enumerate(percentile):
                 try:
-                    data_pr = dataset['pr'][key_s[s], key_c[c], key_p[p], :, :]
+                    data_pr = dataset['pr'][i, j, k, :, :]
                     # plot precipitation
                     plot(data_pr, lat, lon, "pr", project,
                          method, s, c, p, output_path)
                 except IndexError:
                     pass
                 try:
-                    data_tas = dataset['tas'][key_s[s],
-                                              key_c[c], key_p[p], :, :]
+                    data_tas = dataset['tas'][i, j, k, :, :]
                     # plot temperature
                     plot(data_tas, lat, lon, "tas", project,
                          method, s, c, p, output_path)
