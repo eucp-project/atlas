@@ -30,11 +30,11 @@ export default {
       selectedPercentile: '10',
       selectedSeason: 'djf',
       selectedVariable: 'tas',
-      selectedMethod: 'ETHZ_ClimWIP',
+      selectedMethod: 'ClimWIP',
       selectedConstrained: 'cons',
       datasets: {
-        cmip6: 'CMIP6'
-        // cmip5: 'CMIP5'
+        cmip6: 'CMIP6',
+        cmip5: 'CMIP5'
       },
       percentiles: {
         10: '10-percentile',
@@ -52,8 +52,10 @@ export default {
         pr: 'Precipitation'
       },
       methods: {
-        ETHZ_ClimWIP: 'ClimWIP',
-        IPSL_REA: 'REA'
+        ClimWIP: 'ClimWIP',
+        REA: 'REA',
+        HistC: 'HistC',
+        UKCP: 'UKCP'
       },
       constrainedOptions: {
         cons: 'Constrained',
