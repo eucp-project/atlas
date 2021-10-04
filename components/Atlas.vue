@@ -52,9 +52,10 @@ export default {
         pr: 'Precipitation'
       },
       methods: {
+        ASK: 'ASK',
         ClimWIP: 'ClimWIP',
-        REA: 'REA',
         HistC: 'HistC',
+        REA: 'REA',
         UKCP: 'UKCP'
       },
       constrainedOptions: {
