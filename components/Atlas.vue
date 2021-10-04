@@ -53,7 +53,9 @@ export default {
       },
       methods: {
         ClimWIP: 'ClimWIP',
-        REA: 'REA'
+        REA: 'REA',
+        HistC: 'HistC',
+        UKCP: 'UKCP'
       },
       constrainedOptions: {
         cons: 'Constrained',
