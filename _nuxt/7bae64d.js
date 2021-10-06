@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{460:function(t,n,e){"use strict";e.r(n);var l=e(40),component=Object(l.a)({},(function(){var t=this.$createElement,n=this._self._c||t;return n("div",[n("Atlas")],1)}),[],!1,null,null,null);n.default=component.exports;installComponents(component,{Atlas:e(457).default})}}]);
