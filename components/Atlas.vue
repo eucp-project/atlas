@@ -7,7 +7,7 @@
       <Dropdown v-model="selectedVariable" :options="variables" alttext="Choose a variable." />
       <Dropdown v-model="selectedSeason" :options="seasons" alttext="Select a season. Winter is DJF and summer is JJA." />
       <Dropdown v-model="selectedPercentile" :options="percentiles" alttext="Percentiles indicate how likely these changes are." />
-      <Dropdown v-model="selectedDataset" :options="datasets" alttext="Select a dataset. Currently only CMIP6 is included." />
+      <Dropdown v-model="selectedDataset" :options="datasets" alttext="Select a dataset. CMIP6 and CMIP5 are available." />
       <Dropdown v-model="selectedMethod" :options="methods" alttext="Select a method. See More info for explanations of the methods." />
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" alttext="Whether to display constrained or unconstrained projections." />
     </div>
