@@ -1,0 +1,93 @@
+# YAML 1.2
+---
+authors:
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Kalverla
+    given-names: Peter
+    orcid: "https://orcid.org/0000-0002-5025-7862"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Alidoost
+    given-names: Fakhereh
+    orcid: "https://orcid.org/0000-0001-8407-6472"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Liu
+    given-names: Yang
+    orcid: "https://orcid.org/0000-0002-1966-8460"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Verhoeven
+    given-names: Stefan
+    orcid: "https://orcid.org/0000-0002-5821-2060"
+  -
+    affiliation: The Abdus Salam International Centre for Theoretical Physics, Trieste, Italy
+    family-names: Coppola
+    given-names: Erika
+    orcid: "https://orcid.org/0000-0001-6944-5815"
+  -
+    affiliation: The Abdus Salam International Centre for Theoretical Physics, Trieste, Italy; Istituto Nazionale di Oceanografia e di Geofisica Sperimentale, Trieste, Italy
+    family-names: Nogherotto
+    given-names: Rita
+    orcid: "https://orcid.org/0000-0003-1718-542X"
+  -
+    affiliation:
+    family-names: Brunner
+    given-names: Lukas
+    orcid:
+  -
+    affiliation:
+    family-names: Booth
+    given-names: Ben
+    orcid:
+  -
+    affiliation:
+    family-names: Harris
+    given-names: Glen
+    orcid:
+  -
+    affiliation:
+    family-names:
+    given-names: Said
+    orcid:
+  -
+    affiliation:
+    family-names:
+    given-names:
+    orcid:
+  -
+    affiliation:
+    family-names:
+    given-names:
+    orcid:
+  -
+    affiliation:
+    family-names:
+    given-names:
+    orcid:
+  -
+    affiliation:
+    family-names:
+    given-names:
+    orcid:
+  -
+    affiliation:
+    family-names:
+    given-names:
+    orcid:
+  -
+    affiliation:
+    family-names:
+    given-names:
+    orcid:
+
+cff-version: "1.2.0"
+keywords:
+  - climate
+  - EUCP
+license: "Apache-2.0"
+message: "If you use this software, please cite it using these metadata."
+repository-code: "https://github.com/eWaterCycle/ewatercycle"
+title: EUCP Atlas of constrained climate projections
+...
