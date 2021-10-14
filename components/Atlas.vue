@@ -13,7 +13,7 @@
     </div>
     <div
       class="bg-center bg-no-repeat bg-contain flex-grow w-full"
-      :style="{backgroundImage: `url(${bgImage}`}"
+      :style="{backgroundImage: `url(${bgImage})`}"
     />
     <div class="flex place-content-center space-x-3">
       <Button :text="`More info`" :target="`/about`" />
@@ -30,7 +30,7 @@ export default {
       selectedPercentile: '10',
       selectedSeason: 'djf',
       selectedVariable: 'tas',
-      selectedMethod: 'ETHZ_ClimWIP',
+      selectedMethod: 'ClimWIP',
       selectedConstrained: 'cons',
       datasets: {
         cmip6: 'CMIP6',
@@ -52,8 +52,11 @@ export default {
         pr: 'Precipitation'
       },
       methods: {
-        ETHZ_ClimWIP: 'ClimWIP',
-        IPSL_REA: 'REA'
+        ASK: 'ASK',
+        ClimWIP: 'ClimWIP',
+        HistC: 'HistC',
+        REA: 'REA',
+        UKCP: 'UKCP'
       },
       constrainedOptions: {
         cons: 'Constrained',
@@ -63,10 +66,10 @@ export default {
   },
   computed: {
     bgImage () {
-      const fallback = 'eucp_logo.png'
+      const fallback = 'placeholder.png'
       try {
         return require('~/assets/processed_figures/eur_' + this.selectedMethod + '_' + this.selectedVariable + '_41-60_' + this.selectedSeason + '_' + this.selectedDataset + '_' + this.selectedPercentile + 'perc_' + this.selectedConstrained + '.png')
-      } catch (e) {
+      } catch (err) {
         return fallback
       }
     }
