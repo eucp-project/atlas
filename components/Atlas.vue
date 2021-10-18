@@ -12,9 +12,13 @@
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" alttext="Whether to display constrained or unconstrained projections." />
     </div>
     <div
-      class="bg-center bg-no-repeat bg-contain flex-grow w-full"
+      class="relative bg-center bg-no-repeat bg-contain flex-grow w-full"
       :style="{backgroundImage: `url(${bgImage})`}"
-    />
+    >
+      <a href="https://creativecommons.org/licenses/by/4.0/">
+        <img class="absolute bottom-12 right-1/3" src="~/static/ccby_logo.png" alt="CC BY Logo">
+      </a>
+    </div>
     <div class="flex place-content-center space-x-3">
       <Button :text="`More info`" :target="`/about`" />
       <Button :text="`Download data`" />
