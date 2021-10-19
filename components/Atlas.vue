@@ -34,7 +34,8 @@ export default {
       selectedConstrained: 'cons',
       datasets: {
         cmip6: 'CMIP6',
-        cmip5: 'CMIP5'
+        cmip5: 'CMIP5',
+        cordex: 'CORDEX'
       },
       percentiles: {
         10: '10-percentile',
