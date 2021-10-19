@@ -15,8 +15,12 @@
       class="relative bg-center bg-no-repeat bg-contain flex-grow w-full"
       :style="{backgroundImage: `url(${bgImage})`}"
     >
+      <p class="absolute bottom-6 left-1/3 text-center text-sm">
+        Figures can be used under a CC-BY 4.0 licence,
+        see More info on how to cite.
+      </p>
       <a href="https://creativecommons.org/licenses/by/4.0/">
-        <img class="absolute bottom-12 right-1/3" src="~/static/ccby_logo.png" alt="CC BY Logo">
+        <img class="absolute bottom-6 right-1/3" src="~/static/ccby_logo.png" alt="CC BY Logo">
       </a>
     </div>
     <div class="flex place-content-center space-x-3">
