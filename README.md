@@ -1,31 +1,28 @@
 # Atlas of constrained climate projections- EUCP WP2
 
-This repository is a collection of maps and scripts to create an Atlas. The
 [Atlas](https://eucp-project.github.io/atlas/)
 demonstrates some outputs from the probabilistic projection methods, developed
 or assessed in European Climate Projection system ([EUCP](https://www.eucp-project.eu/))
 related to Work Package 2 (WP2) climate projections. For more info, see the
-[Atlas about page](https://eucp-project.github.io/atlas/about).
+[Atlas about page](https://eucp-project.github.io/atlas/about). 
+This repository is a collection of maps and scripts to create the Atlas. 
 
 ## Citation
 
-To cite this repository, use the information avialable at FIXME.
-
-To cite the content of the Atlas, see the [Atlas references page](FIXME).
+To cite this repository, use the information avialable at [FIXME](FIXME),
+and to cite the content of the Atlas, see the [Atlas references page](FIXME).
 
 ## Maintainers
 
 Current maintainers of the Atlas are some of the Research software engineers from
 [Netherlands eScience Center](https://www.esciencecenter.nl/).
-
 If you have any questions or concerns, please submit an
 [issue](https://github.com/eucp-project/atlas/issues). Maintainers will do their
 best to help you
 
 ## Contributing
 
-Atlas is an open-source project and we greatly value contributions. This section
-demonstrates all the instructions for adding maps to Atlas.
+This section demonstrates instructions for adding maps to Atlas.
 
 1. Build Setup
 
@@ -51,8 +48,7 @@ For detailed explanations on how things work, check out [Nuxt.js docs](https://n
 The maps shown in Atlas are created using the data available at [FIXME](FIXME),
 and are stored in `png` format in `assets` directory of this repository. The
 Python scripts to process the data and to create the maps are stored in `python`
-directory of this repository. See more info [here](./python/README.md).
-
+directory. Read more [here](./python/README.md).
 You can use the scripts as examples to develp a new script for your own data.
 Then add new maps and scripts by submitting a new [pull request](https://github.com/eucp-project/atlas/pulls).
 
