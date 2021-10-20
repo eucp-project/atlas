@@ -1,11 +1,7 @@
 # Atlas of constrained climate projections- EUCP WP2
 
-[Atlas](https://eucp-project.github.io/atlas/)
-demonstrates some outputs from the probabilistic projection methods, developed
-or assessed in [European Climate Projection system](https://www.eucp-project.eu/) (EUCP)
-related to Work Package 2 (WP2) climate projections. For more info, see the
-[Atlas about page](https://eucp-project.github.io/atlas/about).
-This repository is a collection of maps and scripts to create the Atlas.
+This repository contains the source code and content for an [Atlas of constrained climate projections](https://eucp-project.github.io/atlas/). The atlas demonstrates outputs from the probabilistic projection methods developed or assessed in the [European Climate Projection system](https://www.eucp-project.eu/) (EUCP)
+Horizon2020 project. For more info, see the [Atlas about page](https://eucp-project.github.io/atlas/about).
 
 ## Citation
 
