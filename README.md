@@ -2,15 +2,15 @@
 
 [Atlas](https://eucp-project.github.io/atlas/)
 demonstrates some outputs from the probabilistic projection methods, developed
-or assessed in European Climate Projection system ([EUCP](https://www.eucp-project.eu/))
+or assessed in [European Climate Projection system](https://www.eucp-project.eu/) (EUCP)
 related to Work Package 2 (WP2) climate projections. For more info, see the
-[Atlas about page](https://eucp-project.github.io/atlas/about). 
-This repository is a collection of maps and scripts to create the Atlas. 
+[Atlas about page](https://eucp-project.github.io/atlas/about).
+This repository is a collection of maps and scripts to create the Atlas.
 
 ## Citation
 
 To cite this repository, use the information avialable at [FIXME](FIXME),
-and to cite the content of the Atlas, see the [Atlas references page](FIXME).
+and to cite the content of the Atlas, see the [Atlas references page]FIXME.
 
 ## Maintainers
 
