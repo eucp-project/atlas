@@ -20,7 +20,7 @@ best to help you.
 
 This section demonstrates instructions for adding maps to Atlas.
 
-1. Build Setup
+1. Create a local build of the application
 
 ```bash
 # install dependencies
