@@ -10,7 +10,7 @@ and to cite the content of the Atlas, see the [Atlas references page]FIXME.
 
 ## Maintainers
 
-Current maintainers of the Atlas are some of the Research software engineers from
+Current maintainers of the Atlas are Research software engineers from the
 [Netherlands eScience Center](https://www.esciencecenter.nl/).
 If you have any questions or concerns, please submit an
 [issue](https://github.com/eucp-project/atlas/issues). Maintainers will do their
