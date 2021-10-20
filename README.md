@@ -18,7 +18,7 @@ best to help you.
 
 ## Contributing
 
-This section demonstrates instructions for adding maps to Atlas.
+The atlas is created with [Nuxt.js](https://nuxtjs.org/docs/get-started/installation). This section provides instructions for adding maps to Atlas.
 
 1. Create a local build of the application
 
