@@ -14,7 +14,7 @@ Current maintainers of the Atlas are Research software engineers from the
 [Netherlands eScience Center](https://www.esciencecenter.nl/).
 If you have any questions or concerns, please submit an
 [issue](https://github.com/eucp-project/atlas/issues). Maintainers will do their
-best to help you
+best to help you.
 
 ## Contributing
 
