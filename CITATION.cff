@@ -1,4 +1,6 @@
 # YAML 1.2
+# More then one affiliation:
+# https://github.com/citation-file-format/citation-file-format/issues/268
 ---
 authors:
   -
