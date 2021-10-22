@@ -1,8 +1,5 @@
 <template>
   <div class="flex flex-col place-content-center items-center h-full">
-    <h1 class="m-4 text-3xl">
-      EUCP WP2 - Atlas of constrained climate projections
-    </h1>
     <div class="space-x-1">
       <Dropdown v-model="selectedVariable" :options="variables" alttext="Choose a variable." />
       <Dropdown v-model="selectedSeason" :options="seasons" alttext="Select a season. Winter is DJF and summer is JJA." />
@@ -11,14 +8,10 @@
       <Dropdown v-model="selectedMethod" :options="methods" alttext="Select a method. See More info for explanations of the methods." />
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" alttext="Whether to display constrained or unconstrained projections." />
     </div>
-    <div
-      class="bg-center bg-no-repeat bg-contain flex-grow w-full"
-      :style="{backgroundImage: `url(${bgImage})`}"
-    />
-    <div class="flex place-content-center space-x-3">
-      <Button :text="`More info`" :target="`/about`" />
-      <Button :text="`Download data`" />
-    </div>
+    <img
+      class="bg-center bg-contain flex-grow w-1/3"
+      :src="bgImage"
+    >
   </div>
 </template>
 
