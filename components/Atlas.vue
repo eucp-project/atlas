@@ -15,10 +15,6 @@
       class="bg-center bg-no-repeat bg-contain flex-grow w-full"
       :style="{backgroundImage: `url(${bgImage})`}"
     />
-    <div class="flex place-content-center space-x-3">
-      <Button :text="`More info`" :target="`/about`" />
-      <Button :text="`Download data`" />
-    </div>
   </div>
 </template>
 
