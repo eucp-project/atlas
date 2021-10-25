@@ -37,12 +37,12 @@
         </svg>
       </button>
     </div>
-    <div
-      v-for="(item, i) in items"
-      :key="i"
-      class=""
-    >
-      <Atlas class="flex flex-col place-content-center" />
+    <div class="flex">
+      <Atlas
+        v-for="(item, i) in items"
+        :key="i"
+        class="flex flex-col place-content-center"
+      />
     </div>
     <div class="flex place-content-center space-x-3">
       <Button :text="`More info`" :target="`/about`" />
