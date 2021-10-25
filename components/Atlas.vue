@@ -50,6 +50,7 @@ export default {
       },
       methods: {
         ASK: 'ASK',
+        CALL: 'CALL',
         ClimWIP: 'ClimWIP',
         HistC: 'HistC',
         REA: 'REA',
