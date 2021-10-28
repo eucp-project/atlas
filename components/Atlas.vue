@@ -8,10 +8,10 @@
       <Dropdown v-model="selectedMethod" :options="methods" alttext="Select a method. See More info for explanations of the methods." />
       <Dropdown v-model="selectedConstrained" :options="constrainedOptions" alttext="Whether to display constrained or unconstrained projections." />
     </div>
-    <img
-      class="bg-center bg-contain flex-grow w-1/3"
-      :src="bgImage"
-    >
+    <div
+      class="bg-center bg-no-repeat bg-contain flex-grow w-full"
+      :style="{backgroundImage: `url(${bgImage})`}"
+    />
   </div>
 </template>
 
@@ -47,6 +47,7 @@ export default {
       },
       methods: {
         ASK: 'ASK',
+        CALL: 'CALL',
         ClimWIP: 'ClimWIP',
         HistC: 'HistC',
         REA: 'REA',
