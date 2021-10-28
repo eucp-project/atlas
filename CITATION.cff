@@ -95,4 +95,9 @@ authors:
     given-names: Stefan
     orcid: "https://orcid.org/0000-0002-5821-2060"
     affiliation: "Netherlands eScience Center"
+  -
+    family-names: Vreede
+    given-names: Barbara
+    orcid: "https://orcid.org/0000-0002-5023-4601"
+    affiliation: "Netherlands eScience Center"
 ...
