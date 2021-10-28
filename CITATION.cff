@@ -2,94 +2,96 @@
 # More then one affiliation:
 # https://github.com/citation-file-format/citation-file-format/issues/268
 ---
-authors:
-  -
-    affiliation: "Netherlands eScience Center"
-    family-names: Kalverla
-    given-names: Peter
-    orcid: "https://orcid.org/0000-0002-5025-7862"
-  -
-    affiliation: "Netherlands eScience Center"
-    family-names: Alidoost
-    given-names: Fakhereh
-    orcid: "https://orcid.org/0000-0001-8407-6472"
-  -
-    affiliation: "Netherlands eScience Center"
-    family-names: Liu
-    given-names: Yang
-    orcid: "https://orcid.org/0000-0002-1966-8460"
-  -
-    affiliation: "Netherlands eScience Center"
-    family-names: Verhoeven
-    given-names: Stefan
-    orcid: "https://orcid.org/0000-0002-5821-2060"
-  -
-    affiliation: The Abdus Salam International Centre for Theoretical Physics, Trieste, Italy
-    family-names: Coppola
-    given-names: Erika
-    orcid: "https://orcid.org/0000-0001-6944-5815"
-  -
-    affiliation: The Abdus Salam International Centre for Theoretical Physics, Trieste, Italy; Istituto Nazionale di Oceanografia e di Geofisica Sperimentale, Trieste, Italy
-    family-names: Nogherotto
-    given-names: Rita
-    orcid: "https://orcid.org/0000-0003-1718-542X"
-  -
-    affiliation:
-    family-names: Brunner
-    given-names: Lukas
-    orcid:
-  -
-    affiliation:
-    family-names: Booth
-    given-names: Ben
-    orcid:
-  -
-    affiliation:
-    family-names: Harris
-    given-names: Glen
-    orcid:
-  -
-    affiliation:
-    family-names:
-    given-names: Said
-    orcid:
-  -
-    affiliation:
-    family-names:
-    given-names:
-    orcid:
-  -
-    affiliation:
-    family-names:
-    given-names:
-    orcid:
-  -
-    affiliation:
-    family-names:
-    given-names:
-    orcid:
-  -
-    affiliation:
-    family-names:
-    given-names:
-    orcid:
-  -
-    affiliation:
-    family-names:
-    given-names:
-    orcid:
-  -
-    affiliation:
-    family-names:
-    given-names:
-    orcid:
-
-cff-version: "1.2.0"
+title: EUCP Atlas of constrained climate projections
 keywords:
   - climate
   - EUCP
+repository-code: "https://github.com/eWaterCycle/ewatercycle"
 license: "Apache-2.0"
 message: "If you use this software, please cite it using these metadata."
-repository-code: "https://github.com/eWaterCycle/ewatercycle"
-title: EUCP Atlas of constrained climate projections
+cff-version: "1.2.0"
+authors:
+  -
+    family-names: Coppola
+    given-names: Erika
+    orcid: "https://orcid.org/0000-0001-6944-5815"
+    affiliation: The Abdus Salam International Centre for Theoretical Physics, Trieste, Italy
+  -
+    family-names: Nogherotto
+    given-names: Rita
+    orcid: "https://orcid.org/0000-0003-1718-542X"
+    affiliation: The Abdus Salam International Centre for Theoretical Physics, Trieste, Italy; Istituto Nazionale di Oceanografia e di Geofisica Sperimentale, Trieste, Italy
+  -
+    family-names: Brunner
+    given-names: Lukas
+    orcid: "https://orcid.org/0000-0001-5760-4524"
+    affiliation: ETH Zurich
+  -
+    family-names: Booth
+    given-names: Ben
+    orcid: "https://orcid.org/0000-0002-0715-2141"
+    affiliation: UK Met Office
+  -
+    family-names: Harris
+    given-names: Glen
+    orcid: "https://orcid.org/0000-0001-9259-7964"
+    affiliation: UK Met Office
+  -
+    family-names: Qasmi
+    given-names: Said
+    orcid: "https://orcid.org/0000-0002-1825-3896"
+    affiliation: Centre National de Recherches Météorologiques
+  -
+    family-names: Ballinger
+    given-names: Andrew
+    orcid: "https://orcid.org/0000-0003-3704-1976"
+    affiliation: University of Edinburgh
+  -
+    family-names: Heger
+    given-names: Gabrielle
+    affiliation: University of Edinburgh
+  -
+    family-names: McSweeney
+    given-names: Carol
+    orcid: "https://orcid.org/0000-0001-8898-2093"
+    affiliation: UK Met Office
+  -
+    family-names: O'Reilly
+    given-names: Christopher
+    orcid: "https://orcid.org/0000-0002-8630-1650"
+    affiliation: Reading University
+  -
+    family-names: Palmer
+    given-names: Tamzin
+    orcid: "https://orcid.org/0000-0002-8889-5595"
+    affiliation: UK Met Office
+  -
+    family-names: Ribes
+    given-names: Aurelian
+    affiliation: Centre National de Recherches Météorologiques
+  -
+    family-names: de Vries
+    given-names: Hylke
+    orcid: "https://orcid.org/0000-0002-6124-1102"
+    affiliation: Royal Netherlands Meteorological Institute (KNMI)
+  -
+    family-names: Kalverla
+    given-names: Peter
+    orcid: "https://orcid.org/0000-0002-5025-7862"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Alidoost
+    given-names: Fakhereh
+    orcid: "https://orcid.org/0000-0001-8407-6472"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Liu
+    given-names: Yang
+    orcid: "https://orcid.org/0000-0002-1966-8460"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Verhoeven
+    given-names: Stefan
+    orcid: "https://orcid.org/0000-0002-5821-2060"
+    affiliation: "Netherlands eScience Center"
 ...
