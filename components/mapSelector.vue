@@ -1,25 +1,17 @@
 <template>
-  <div class="flex flex-col place-content-center items-center h-full">
-    <h1 class="m-4 text-3xl">
-      EUCP WP2 - Atlas of constrained climate projections
-    </h1>
-    <div class="space-x-1">
-      <Dropdown v-model="selectedVariable" :options="variables" alttext="Choose a variable." />
-      <Dropdown v-model="selectedSeason" :options="seasons" alttext="Select a season. Winter is DJF and summer is JJA." />
-      <Dropdown v-model="selectedPercentile" :options="percentiles" alttext="Percentiles indicate how likely these changes are." />
-      <Dropdown v-model="selectedDataset" :options="datasets" alttext="Select a dataset. CMIP6, CMIP5 and CORDEX are available." />
-      <Dropdown v-model="selectedMethod" :options="methods" alttext="Select a method. See More info for explanations of the methods." />
-      <Dropdown v-model="selectedConstrained" :options="constrainedOptions" alttext="Whether to display constrained or unconstrained projections." />
-    </div>
-    <div
-      class="bg-center bg-no-repeat bg-contain flex-grow w-full"
-      :style="{backgroundImage: `url(${bgImage})`}"
-    />
+  <div class="space-x-1">
+    <Dropdown v-model="selectedVariable" :options="variables" alttext="Choose a variable." @input="$emit('input', updatedValue)" />
+    <Dropdown v-model="selectedSeason" :options="seasons" alttext="Select a season. Winter is DJF and summer is JJA." @input="$emit('input', updatedValue)" />
+    <Dropdown v-model="selectedPercentile" :options="percentiles" alttext="Percentiles indicate how likely these changes are." @input="$emit('input', updatedValue)" />
+    <Dropdown v-model="selectedDataset" :options="datasets" alttext="Select a dataset. CMIP6, CMIP5 and CORDEX are available." @input="$emit('input', updatedValue)" />
+    <Dropdown v-model="selectedMethod" :options="methods" alttext="Select a method. See More info for explanations of the methods." @input="$emit('input', updatedValue)" />
+    <Dropdown v-model="selectedConstrained" :options="constrainedOptions" alttext="Whether to display constrained or unconstrained projections." @input="$emit('input', updatedValue)" />
   </div>
 </template>
 
 <script>
 export default {
+  props: ['value'],
   data () {
     return {
       selectedDataset: 'cmip6',
@@ -63,12 +55,11 @@ export default {
     }
   },
   computed: {
-    bgImage () {
-      const fallback = 'placeholder.png'
+    updatedValue () {
       try {
         return require('~/assets/processed_figures/eur_' + this.selectedMethod + '_' + this.selectedVariable + '_41-60_' + this.selectedSeason + '_' + this.selectedDataset + '_' + this.selectedPercentile + 'perc_' + this.selectedConstrained + '.png')
       } catch (err) {
-        return fallback
+        return 'placeholder.png'
       }
     }
   }
