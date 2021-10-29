@@ -1,12 +1,23 @@
 <template>
-  <div>
-    <div v-for="(map, i) in maps" :key="i" class="m-1">
-      <MapSelector v-model="map.path" />
-      <button v-if="maps.length!=1" @click="maps.splice(i, 1)">Remove</button>
-      <button v-if="i===maps.length-1" @click="maps.push(clone(map))">Add</button>
+  <div class="flex flex-col items-center h-full">
+    <div class="flex flex-col justify-start gap-1">
+      <div v-for="(map, i) in maps" :key="i">
+        <MapSelector v-model="map.path" />
+        <button v-if="maps.length!=1" @click="maps.splice(i, 1)">
+          Remove
+        </button>
+        <button v-if="i===maps.length-1" @click="maps.push(clone(map))">
+          Add
+        </button>
+      </div>
     </div>
-    <div class="flex">
-      <img v-for="(map, id) in maps" :key="id" :src="map.path" :alt="id" class="h-96">
+    <div class="flex flex-grow w-full">
+      <span
+        v-for="(map, id) in maps"
+        :key="id"
+        class="bg-center bg-no-repeat bg-contain flex-grow"
+        :style="{backgroundImage: `url(${map.path})`}"
+      />
     </div>
   </div>
 </template>
