@@ -1,6 +1,10 @@
 <template>
   <div>
-    <MapSelector v-for="(map, i) in maps" :key="i" v-model="map.path" />
+    <div v-for="(map, i) in maps" :key="i">
+      <MapSelector v-model="map.path" />
+      <button v-if="maps.length!=1" @click="maps.splice(i, 1)">Remove</button>
+      <button v-if="i===maps.length-1" @click="maps.push(map)">Add</button>
+    </div>
     <div class="flex">
       <img v-for="(map, id) in maps" :key="id" :src="map.path" :alt="id" class="h-96">
     </div>
