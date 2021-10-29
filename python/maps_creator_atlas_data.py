@@ -3,7 +3,7 @@ Update content of the Atlas - generate maps based on the preprocessed netcdf dat
 Function        : Plot maps in a uniform way based on the netcdf files
 Author          : Team BETA
 First Built     : 2021.08.12
-Last Update     : 2021.10.01
+Last Update     : 2021.10.29
 Library         : os, glob, netcdf4, matplotlib, cartopy, argparse
 Description     : In this notebook serves to extract netcdf data and generate maps
                   for Atlas page.
@@ -118,10 +118,10 @@ def plot(data, lat, lon, variable, project, method,
     cbar.ax.tick_params(labelsize=20)
     if variable == "pr":
         ax.set_title("\n".join(wrap(
-            f'{method} {cons[constrained]} {season.lower()} relative precipitation projections (%) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
+            f'{method} {cons[constrained]} {season.lower()} relative precipitation projections (%) - {percentile}th percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
     elif variable == "tas":
         ax.set_title("\n".join(wrap(
-            f'{method} {cons[constrained]} {season.lower()} temperature projections (degC) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
+            f'{method} {cons[constrained]} {season.lower()} temperature projections (degC) - {percentile}th percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
     # plt.show()
     fig.savefig(Path(output_path,
                 f"eur_{method}_{variable}_41-60_{season.lower()}_{project.lower()}_{percentile}perc_{cons[constrained]}.png"),
