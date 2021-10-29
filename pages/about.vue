@@ -10,7 +10,8 @@
         <span>
           <h1 class="m-2 text-xl" @click="toggle(item)">
             {{ item.question }}
-            {{ item.isActive ? "&nbsp; ^" : "&nbsp; v" }}
+            <font-awesome-icon v-if="item.isActive" :icon="['fas', 'angle-up']" />
+            <font-awesome-icon v-else :icon="['fas', 'angle-down']" />
           </h1>
         </span>
         <p v-show="item.isActive" class="m-2">
