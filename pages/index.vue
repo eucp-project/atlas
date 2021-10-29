@@ -3,11 +3,12 @@
     <div class="flex flex-col justify-start gap-1">
       <div v-for="(map, i) in maps" :key="i">
         <MapSelector v-model="map.path" />
-        <button v-if="maps.length!=1" @click="maps.splice(i, 1)">
-          Remove
+        <button v-if="maps.length!=1" class="mx-4" @click="maps.splice(i, 1)">
+          <font-awesome-icon :icon="['fas', 'trash']" />
         </button>
-        <button v-if="i===maps.length-1" @click="maps.push(clone(map))">
-          Add
+
+        <button v-if="i===maps.length-1" class="mx-4" @click="maps.push(clone(map))">
+          <font-awesome-icon :icon="['fas', 'plus']" />
         </button>
       </div>
     </div>
