@@ -52,38 +52,47 @@ def prepareData(nc_file, datapath, output_path):
         data_tas = dataset['tas'][:]
     except IndexError:
         pass
+
     # key dictionary to get dimensions
     percentile = dataset['percentile'][:]
-    constrained = dataset['constrained'][:]
-    season = dataset['season'][:]
-    key_p = dict(zip(percentile, range(len(percentile))))
-    key_c = dict(zip(constrained, range(len(constrained))))
-    key_s = dict(zip(season, range(len(season))))
+    season = dataset['time'][:]
+
     # string operations for naming
-    project = nc_file.split('_')[-1][:-3]
-    # institute = nc_file.split('_')[1]
-    method = nc_file.split('_')[2]
+    input_file_name = dict(
+        zip(["prefix", "activity", "institution_id", "source", "method", "sub_method", "cmor_var"],
+        Path(nc_file).stem.split('_')
+    )
+    )
+
+    project = input_file_name["source"]
+    method = input_file_name["method"]
+    c = input_file_name["sub_method"]
+
     # latitudes and longitudes
-    lat = dataset['lat'][:]
-    lon = dataset['lon'][:]
+    lat = dataset['latitude'][:]
+    lon = dataset['longitude'][:]
+
+    SEASONS = ["JJA", "DJF"]
+
     # loop
     for i, s in enumerate(season):
-        for j, c in enumerate(constrained):
-            for k, p in enumerate(percentile):
-                try:
-                    data_pr = dataset['pr'][i, j, k, :, :]
-                    # plot precipitation
-                    plot(data_pr, lat, lon, "pr", project,
-                         method, s, c, p, output_path)
-                except IndexError:
-                    pass
-                try:
-                    data_tas = dataset['tas'][i, j, k, :, :]
-                    # plot temperature
-                    plot(data_tas, lat, lon, "tas", project,
-                         method, s, c, p, output_path)
-                except IndexError:
-                    pass
+        for k, p in enumerate(percentile):
+            try:
+                data_pr = dataset['pr'][i, :, :, k]
+
+                # plot precipitation
+                plot(data_pr, lat, lon, "pr", project,
+                     method, s, c, p, output_path)
+            except IndexError:
+                pass
+            try:
+                data_tas = dataset['tas'][i, :, :, k]
+
+                # plot temperature
+                plot(data_tas, lat, lon, "tas", project,
+                     method, SEASONS[i], c, p, output_path)
+            except IndexError:
+                pass
 
 
 def plot(data, lat, lon, variable, project, method,
@@ -91,8 +100,7 @@ def plot(data, lat, lon, variable, project, method,
     """
     Plot relative precipitation and temperature using cartopy.
     """
-    # name list
-    cons = ["uncons", "cons"]  # 0: unconstrained 1: constrained
+
     # plot fig
     fig = plt.figure(figsize=(12.8, 9.6))
     ax = plt.axes(projection=ccrs.PlateCarree())
@@ -110,22 +118,34 @@ def plot(data, lat, lon, variable, project, method,
     gl.xlabel_style = {'size': 20, 'color': 'black'}
     gl.ylabel_style = {'size': 20, 'color': 'black'}
     if variable == "pr":
-        cs = plt.pcolormesh(lon, lat, data, cmap="BrBG", vmin=-50, vmax=50)
+      cmap="BrBG"
+      vmin=-50
+      vmax=50
     elif variable == "tas":
-        cs = plt.pcolormesh(lon, lat, data, cmap="YlOrRd", vmin=0, vmax=5)
+        cmap="YlOrRd"
+        vmin=0
+        vmax=5
+
+    cs = plt.pcolormesh(lon, lat, data, cmap=cmap, vmin=vmin, vmax=vmax)
     cbar = fig.colorbar(cs, extend='both', orientation='vertical',
                         shrink=0.8, pad=0.08, spacing="uniform")
     cbar.ax.tick_params(labelsize=20)
     if variable == "pr":
-        ax.set_title("\n".join(wrap(
-            f'{method} {cons[constrained]} {season.lower()} relative precipitation projections (%) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
+        title = "\n".join(
+          wrap(f'{method} {constrained} {season.lower()} relative precipitation projections (%) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)
+            )
     elif variable == "tas":
-        ax.set_title("\n".join(wrap(
-            f'{method} {cons[constrained]} {season.lower()} temperature projections (degC) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)), fontsize=20)
+      title = "\n".join(
+        wrap(f'{method} {constrained} {season.lower()} temperature projections (degC) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)
+        )
     # plt.show()
-    fig.savefig(Path(output_path,
-                f"eur_{method}_{variable}_41-60_{season.lower()}_{project.lower()}_{percentile}perc_{cons[constrained]}.png"),
-                dpi=150)
+    ax.set_title(title, fontsize=20)
+    output_file_name = Path(
+      output_path,
+      f"eur_{method}_{variable}_41-60_{season.lower()}_{project.lower()}_{percentile}perc_{constrained}.png"
+      )
+    print(f"saving {output_file_name}")
+    fig.savefig(output_file_name, dpi=150)
     plt.close(fig)
 
 
