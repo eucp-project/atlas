@@ -28,9 +28,7 @@ export default {
   data () {
     return {
       maps: [
-        { path: require('~/assets/processed_figures/eur_ASK_tas_41-60_djf_cmip6_10perc_cons.png') },
-        { path: require('~/assets/processed_figures/eur_ASK_tas_41-60_djf_cmip6_50perc_cons.png') },
-        { path: require('~/assets/processed_figures/eur_ASK_tas_41-60_djf_cmip6_90perc_cons.png') }
+        { path: require('~/assets/processed_figures/eur_ClimWIP_tas_41-60_djf_cmip6_10perc_cons.png') }
       ]
     }
   },
