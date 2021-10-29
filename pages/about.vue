@@ -1,62 +1,80 @@
 <template>
   <div>
-    <div class="flex place-content-center bg-gray-100 m-4">
-      <h1 class="text-2xl p-6 align-middle">
-        Comparing Constrained Future European Climate Projections
+    <div class="flex place-content-center bg-gray-100 m-3">
+      <h1 class="text-xl p-3 align-middle">
+        FAQ
       </h1>
     </div>
-    <div class="flex flex-row mb-2 mt-2 p-4">
-      <div class="pl-4 w-2/3 no-wrap text-left">
-        <div class="space-y-6 space-y-reverse pt-8">
-          <h2 class="text-xl">
-            How do these methods work?
-          </h2>
-          <p>
-            Summary in accessible language about how constraints work.
-          </p>
-          <h2 class="text-xl">
-            What are the differences between the methods?
-          </h2>
-          <p>
-            <ul class="list-disc list-inside">
-              <li>Weighting available models vs scaling model responses. ETH, CNRS, ICTP and UKMO methods are based on weighting available historical-future simulations (based on how well they reproduce observed climate). As such the probabilistic projections will always reflect a subset of existing simulations. Edin and Oxford methods both scale the simulations to best match observations. Unlike the former category, their projected future changes can fall outside the range of the underlying simulations. Where projected changes do fall outside this range, there are potential strengths and reasons to be cautious about the how we interpret these changes. The strength of these methods is that they can potential compensate for real world processes that are missing or unrepresented in the simulations. For example, there are cases of observed historical rainfall changes being larger than any simulated. In these cases, the methods may be better able to compensate for any simulated underestimation of the actual climate response. Caution may also be warranted in that available simulations represent the range of responses arising from our current physical understanding of these process - so methods that adjust projected changes outside these ranges may push these into responses which are less physically realistic.</li>
-              <li>Differences in sources of uncertainty accounted for. The majority of methods employed in D2.3 make use of available CMIP data. These represent snapshots of climate simulations from our current international archives. the UKMO method, however, also include uncertainties from other terms (carbon cycle, model parametric uncertainty). As such its ranges are wider</li>
-              <li>Differences in ease of application. Some methods are easy to set up, whilst other require more involved implementation relient on data sources or expert judgement.</li>
-            </ul>
-          </p>
-          <h2 class="text-xl">
-            Which method is "best"?
-          </h2>
-          <p>
-            Summary of perfect-model analysis take-home messages.
-          </p>
-          <h2 class="text-xl">
-            Hypothetical cases
-          </h2>
-          <p>
-            <ul class="list-disc list-inside">
-              <li>User X wants to ... . In this case, they used ... because ...</li>
-              <li>For ..., user Y was mainly interested in ... over ... They used method ... because ...</li>
-              <li>User Z is planning to ... Since ...., they decided to go with the ... method.</li>
-            </ul>
-          </p>
-        </div>
-      </div>
-      <div class="p-4 w-1/3 ml-8 no-wrap text-left bg-blue-900 text-white space-y-6">
-        <h2 class="text-xl mt-2">
-          Publications
-        </h2>
-        <p>
-          Comparing Methods to Constrain Future European Climate Projections Using a Consistent Framework: <br>
-          <strong>
-            <a href="https://doi.org/10.1175/JCLI-D-19-0953.1">https://doi.org/10.1175/JCLI-D-19-0953.1</a>
-          </strong>
+    <div class="flex flex-col items-center">
+      <div v-for="(item, index) in items" :key="index" class="p-2 w-1/2 m-2">
+        <span>
+          <h1 class="m-2 text-xl" @click="toggle(item)">
+            {{ item.question }}
+            {{ item.isActive ? "&nbsp; ^" : "&nbsp; v" }}
+          </h1>
+        </span>
+        <p v-show="item.isActive" class="m-2">
+          {{ item.answer }}
         </p>
-        <p>
-          Another paper
-        </p>
+        <img
+          v-show="item.isActive"
+          v-if="!!item.figure"
+          :src="item.figure"
+          alt=""
+        >
       </div>
     </div>
-    <Button :text="`Back`" :target="`/`" />
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      items: [
+        {
+          question: 'What do these maps show?',
+          answer:
+            'This atlas shows several different model projections of the European climate in 2050, illustrating the effect of constraining the projections. Not all climate simulations are equally likely, however this is not routinely addressed in current climate projections. Methods of isolating the more likely projections include comparing a simulation of the past to observed climate data recorded at the time. This can suggest how well the simulation may project the future. This process is known as ‘constraint’ and can affect the results given by an ensemble of climate simulations by ruling out the poorer simulations.',
+          isActive: false
+        },
+        {
+          question: 'What are the differences between the methods?',
+          answer:
+            'There are several differences between the constraint methods used in this analysis, including the kind of observational data they use and how the results are handled statistically. For instance, the UKCP and ClimWIP methods both use multiple observed variables (eg. temperature, precipitation) to constrain their projections, rather than just using the target variable being reported. Some methods constrain their variables at different spatial scales, from global to local, before deriving constrained local projections. Different methods also handle uncertainty in the projections differently. The following table includes the key characteristics of the different methods and is reprinted from Brunner et al. (2020), which contains more information on the differences between these methods.',
+          isActive: false,
+          figure: 'methods.png'
+        },
+        {
+          question: 'What do the percentiles mean?',
+          answer:
+            'A percentile is the level below which a given percentage of simulations fall when they are put in order according to a variable such as temperature. For instance, the 50th percentile in the atlas includes the lower 50% of the climate projections. The 10th percentile of precipitation projections may show significant drying, while the 90th percentile might show much wetter conditions.',
+          isActive: false
+        },
+        {
+          question: 'Which method is best?',
+          answer:
+            'The question of which constraint method is best depends on what the projection is being used for. Some methods have particular strengths over others.  For example, some methods provide relative weights of available simulations that could be used to select models to drive downstream climate impact analysis, and some methods can provide physically consistent projections for a number of variables. Method performance can be different in different areas or with different variables. One method, for instance, could bring significant improvements over unconstrained projections in northern Europe but not in the Mediterranean region.   It should be noted, however, that all the constraint methods used in the Atlas confer some improvement over unconstrained projections for summer temperature, and strongly related variables, and most provide improvements for all regions.',
+          isActive: false
+        },
+        {
+          question: 'Where can I find more information?',
+          answer:
+            'Please view the references section below for more on the background research behind this Atlas. For more on the EUCP project, please head to our website. This Atlas has been produced by Work Package 2 of EUCP, which is described in more detail here.',
+          isActive: false
+        }
+      ]
+    }
+  },
+  // async mounted () {
+  //   const items = await this.$content('items').fetch()
+  //   console.log(items)
+  //   // this.index = index
+  // },
+  methods: {
+    toggle (item) {
+      item.isActive = !item.isActive
+    }
+  }
+}
+</script>

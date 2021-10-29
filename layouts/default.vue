@@ -9,8 +9,6 @@
         <NuxtLink :to="`/about`" class="hover:text-blue-400">ABOUT</NuxtLink>
         <NuxtLink :to="`/examples`" class="hover:text-blue-400" >EXAMPLES</NuxtLink>
         <NuxtLink :to="`/references`" class="hover:text-blue-400" >DOWNLOAD DATA</NuxtLink>
-        <NuxtLink :to="`/references`" class="hover:text-blue-400">REFERENCES</NuxtLink>
-        <NuxtLink :to="`/faq`" class="hover:text-blue-400">FAQ</NuxtLink>
       </div>
     </div>
     <Nuxt class="flex-grow" />
