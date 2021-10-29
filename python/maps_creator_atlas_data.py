@@ -14,12 +14,11 @@ Note            : All the maps are generated in a uniform way.
 import os
 from pathlib import Path
 import argparse
-import glob
-from netCDF4 import Dataset
 import matplotlib
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 from textwrap import wrap
+import xarray as xr
 # Generate images without having a window appear
 matplotlib.use('Agg')
 
@@ -43,19 +42,7 @@ def prepareData(nc_file, datapath, output_path):
     Extract data and names for plotting.
     """
     # extract data - weighted (constrained) and unweighted (unconstrained)
-    dataset = Dataset(Path(datapath, nc_file))
-    try:
-        data_pr = dataset['pr'][:]
-    except IndexError:
-        pass
-    try:
-        data_tas = dataset['tas'][:]
-    except IndexError:
-        pass
-
-    # key dictionary to get dimensions
-    percentile = dataset['percentile'][:]
-    season = dataset['time'][:]
+    dataset = xr.open_dataset(Path(datapath, nc_file))
 
     # string operations for naming
     input_file_name = dict(
@@ -68,34 +55,16 @@ def prepareData(nc_file, datapath, output_path):
     method = input_file_name["method"]
     c = input_file_name["sub_method"]
 
-    # latitudes and longitudes
-    lat = dataset['latitude'][:]
-    lon = dataset['longitude'][:]
-
     SEASONS = ["JJA", "DJF"]
 
     # loop
-    for i, s in enumerate(season):
-        for k, p in enumerate(percentile):
-            try:
-                data_pr = dataset['pr'][i, :, :, k]
-
-                # plot precipitation
-                plot(data_pr, lat, lon, "pr", project,
-                     method, s, c, p, output_path)
-            except IndexError:
-                pass
-            try:
-                data_tas = dataset['tas'][i, :, :, k]
-
-                # plot temperature
-                plot(data_tas, lat, lon, "tas", project,
-                     method, SEASONS[i], c, p, output_path)
-            except IndexError:
-                pass
+    for i, t in enumerate(dataset['time'].values):
+        for  p in dataset['percentile'].values:
+            data = dataset.sel(percentile=p, time=t)
+            plot(data, project, method, SEASONS[i], c, p, output_path)
 
 
-def plot(data, lat, lon, variable, project, method,
+def plot(data, project, method,
          season, constrained, percentile, output_path):
     """
     Plot relative precipitation and temperature using cartopy.
@@ -117,27 +86,28 @@ def plot(data, lat, lon, variable, project, method,
     gl.ylines = False
     gl.xlabel_style = {'size': 20, 'color': 'black'}
     gl.ylabel_style = {'size': 20, 'color': 'black'}
-    if variable == "pr":
-      cmap="BrBG"
-      vmin=-50
-      vmax=50
-    elif variable == "tas":
-        cmap="YlOrRd"
-        vmin=0
-        vmax=5
-
-    cs = plt.pcolormesh(lon, lat, data, cmap=cmap, vmin=vmin, vmax=vmax)
-    cbar = fig.colorbar(cs, extend='both', orientation='vertical',
-                        shrink=0.8, pad=0.08, spacing="uniform")
-    cbar.ax.tick_params(labelsize=20)
-    if variable == "pr":
+    if 'pr' in list(data.keys()):
+        variable = 'pr'
+        cmap = "BrBG"
+        vmin = -50
+        vmax = 50
         title = "\n".join(
           wrap(f'{method} {constrained} {season.lower()} relative precipitation projections (%) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)
             )
-    elif variable == "tas":
-      title = "\n".join(
+    elif 'tas' in list(data.keys()):
+        variable = 'tas'
+        cmap = "YlOrRd"
+        vmin = 0
+        vmax = 5
+        title = "\n".join(
         wrap(f'{method} {constrained} {season.lower()} temperature projections (degC) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)
         )
+
+    cs = data[variable].plot(cmap=cmap, vmin=vmin, vmax=vmax, ax=ax, add_colorbar=False)
+    cbar = fig.colorbar(cs, extend='both', orientation='vertical',
+                        shrink=0.8, pad=0.08, spacing="uniform")
+    cbar.ax.tick_params(labelsize=20)
+
     # plt.show()
     ax.set_title(title, fontsize=20)
     output_file_name = Path(
