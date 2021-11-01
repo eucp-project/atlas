@@ -101,10 +101,10 @@ def plot(data, lat, lon, variable, project, method,
     ax.coastlines(resolution='110m', color='black', linewidth=2)
     gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True,
                       linewidth=1, color='gray', alpha=0.5, linestyle='--')
-    gl.xlabels_top = False
-    gl.xlabels_bottom = True
-    gl.ylabels_left = True
-    gl.ylabels_right = False
+    gl.top_labels = False
+    gl.bottom_labels = True
+    gl.left_labels = True
+    gl.right_labels = False
     gl.xlines = False
     gl.ylines = False
     gl.xlabel_style = {'size': 20, 'color': 'black'}
