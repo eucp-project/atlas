@@ -62,6 +62,27 @@ export default {
         return 'placeholder.png'
       }
     }
+  },
+  mounted () {
+    // Make selections consistent
+    const name = this.value.split('/').slice(-1)[0]
+    if (name === 'placeholder.png') {
+      // Placeholder doesn't carry enough info to reconstruct copied selection
+      // Instead, make sure the figure matches the default selection
+      this.$emit('input', this.updatedValue)
+    }
+
+    const parts = name.split('_')
+    // console.log(parts)
+    // [ "eur", "ASK", "tas", "41-60", "djf", "cmip6", "10perc", "cons.png" ]
+
+    // Update selected values based on the input path
+    this.selectedMethod = parts[1]
+    this.selectedVariable = parts[2]
+    this.selectedSeason = parts[4]
+    this.selectedDataset = parts[5]
+    this.selectedPercentile = parseInt(parts[6].slice(0, 2))
+    this.selectedConstrained = parts[7].slice(0, parts[7].length - 4)
   }
 }
 </script>
