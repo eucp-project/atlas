@@ -1,20 +1,23 @@
 # Contributing guidelines
 
 ## In general
+
 Contributions are very welcome. Please make sure there is a github issue
 associated with with every pull request. Creating an issue is also a good way to
 propose new features.
 
 ## Add maps to the Atlas
+
 The maps shown in Atlas are created using the data available at [FIXME](FIXME),
 and are stored in `.png` format in the [assets](./assets) directory of this
 repository. You can use the scripts and notebooks as examples to develop a new
 script for your own data.
 
 ### Processing data and preparing plots
+
 Content for the Atlas page is generated in multiple steps:
 
-- Preprocess data to clean netcdf files
+- Preprocess data to clean netCDF files
 - Plot maps in a uniform way based on the clean data files
 
 The scripts that perform these actions are stored in the [python](./python)
@@ -25,16 +28,18 @@ When adding a new script or notebook, please place a short description in the
 
 ### Clean data
 
-The clean data has a netcdf4 format, and follows the following standards:
+The clean data has a netCDF4 format, and follows the following standards:
 
-**coordinates:**
+#### coordinates
+
 - lon (lon) (float64) [-10, ..., 40]
 - lat (lat) (float64) [30, ..., 75]
 - percentile (percentile) (int64) [10, 25, 50, 75, 90]
 - constrained (constrained) (int64) [1, 0]
 - season (season) (object) ['DJF', 'JJA']
 
-**variables**
+#### variables
+
 - tas (season, constrained, percentile, lat, lon) (float64)
 - pr (season, constrained, percentile, lat, lon) (float64)
 
@@ -85,17 +90,20 @@ documentation](https://nuxtjs.org/guide/routing).
 ## Making a release
 
 ### Author information
+
 Ensure all authors are present in:
 
 - `.zenodo.json`
 - `CITATION.cff`
 
 ### Confirm release info
+
 Ensure the right date and upcoming version number is set in:
 
 - `CITATION.cff`
 
 ### Release on GitHub
+
 Open [releases](https://github.com/eucp-project/atlas/releases) and draft a new
 release.
 
@@ -108,5 +116,6 @@ candidate release, and amend the version tag with `rc` and the candidate number.
 Confirm the new release on [Zenodo](https://doi.org/10.5281/zenodo.3252665).
 
 ### Release on the Research Software Directory
+
 Wait a few hours, then confirm the addition of a new release on the
 [RSD](FIXME). (TBD)
