@@ -1,6 +1,7 @@
 # Atlas of constrained climate projections- EUCP WP2
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=eucp-project_atlas&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=eucp-project_atlas)
+[![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8B%20%20%E2%97%8B%20%20%E2%97%8B%20%20%E2%97%8B-red)](https://fair-software.eu)
 
 This repository contains the source code and content for an [Atlas of constrained climate projections](https://eucp-project.github.io/atlas/). The atlas demonstrates outputs from the probabilistic projection methods developed or assessed in the [European Climate Projection system](https://www.eucp-project.eu/) (EUCP)
 Horizon2020 project. For more info, see the [Atlas about page](https://eucp-project.github.io/atlas/about).
