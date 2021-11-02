@@ -93,7 +93,6 @@ documentation](https://nuxtjs.org/guide/routing).
 
 Ensure all authors are present in:
 
-- `.zenodo.json`
 - `CITATION.cff`
 
 ### Confirm release info
@@ -101,6 +100,7 @@ Ensure all authors are present in:
 Ensure the right date and upcoming version number is set in:
 
 - `CITATION.cff`
+- `package.json`
 
 ### Release on GitHub
 
@@ -113,9 +113,10 @@ Tag the release according to semantic versioning guidelines, preceded with a `v`
 candidate release, and amend the version tag with `rc` and the candidate number.
 
 ### Release on Zenodo
-Confirm the new release on [Zenodo](https://doi.org/10.5281/zenodo.3252665).
+
+Confirm the new release on [Zenodo]((FIXME). (TBD)
 
 ### Release on the Research Software Directory
 
 Wait a few hours, then confirm the addition of a new release on the
-[RSD](FIXME). (TBD)
+[RSD](https://www.research-software.nl/software/eucp-atlas).
