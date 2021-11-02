@@ -2,8 +2,8 @@
 
 ## In general
 
-Contributions are very welcome. Please make sure there is a github issue
-associated with with every pull request. Creating an issue is also a good way to
+Contributions are very welcome. Please make sure there is a GitHub issue
+associated with with every pull request. [Creating an issue](https://github.com/eucp-project/atlas/issues/new) is also a good way to
 propose new features.
 
 ## Add maps to the Atlas
