@@ -8,7 +8,7 @@
     <div class="flex flex-col items-center">
       <div v-for="(item, index) in questions.items" :key="index" class="p-2 w-1/2 m-2">
         <span>
-          <h1 class="m-2 text-xl" @click="toggle(item)">
+          <h1 class="m-2 text-xl" role="button" @click="toggle(item)">
             {{ item.question }}
             <font-awesome-icon v-if="item.isActive" :icon="['fas', 'angle-up']" />
             <font-awesome-icon v-else :icon="['fas', 'angle-down']" />
