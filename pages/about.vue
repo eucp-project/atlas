@@ -37,7 +37,6 @@ export default {
   },
   async mounted () {
     const questions = await this.$content('items').fetch()
-    console.log(questions)
     this.questions = questions
   },
   methods: {
