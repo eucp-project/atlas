@@ -3,6 +3,17 @@
 In this folder all scripts and notebooks are stored that are used to pre-process
 data and to generate the maps in the Atlas.
 
+## Requirements
+
+The dependencies of the notebooks and scripts can be installed in a Conda environment with
+
+```shell
+# From this directory
+conda install mamba -n base -c conda-forge -y
+mamba env create --file environment.yml
+conda activate atlas
+```
+
 ## Preprocess netCDF data
 
 - [Preprocess CNRM-KCC data](cleanup_CNRM_KCC_atlas_netcdf.ipynb)
