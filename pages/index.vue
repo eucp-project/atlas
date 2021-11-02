@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col items-center h-full">
+  <div class="flex flex-col items-center h-full max-h-full">
     <!-- Adding the selectors -->
     <div class="flex flex-col justify-start gap-1">
       <div v-for="(map, i) in maps" :key="i">
-        <span v-if="maps.length>1" class="text-xl"> {{ getLetter(i) }} </span>
+        <!-- <span v-if="maps.length>1" class="text-xl"> {{ getLetter(i) }} </span> -->
         <MapSelector v-model="map.path" />
         <button v-if="maps.length!=1" class="mx-4" @click="maps.splice(i, 1)">
           <font-awesome-icon :icon="['fas', 'trash']" />
@@ -21,7 +21,7 @@
         class="bg-center bg-no-repeat bg-contain flex-grow"
         :style="{backgroundImage: `url(${map.path})`}"
       >
-        <p v-if="maps.length>1" class="text-xl m-24"> {{ getLetter(id) }} </p>
+        <!-- <p v-if="maps.length>1" class="text-xl m-24"> {{ getLetter(id) }} </p> -->
       </span>
     </div>
   </div>
