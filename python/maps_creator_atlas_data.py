@@ -92,7 +92,7 @@ def plot(data, project, method,
         vmin = -50
         vmax = 50
         title = "\n".join(
-          wrap(f'{method} {constrained} {season.lower()} relative precipitation projections (%) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)
+          wrap(f'{method} {constrained} {season.lower()} relative precipitation projections (%) - {percentile}th percentile projected changes for 2050 with respect to present-day climate', 60)
             )
     elif 'tas' in list(data.keys()):
         variable = 'tas'
@@ -100,10 +100,10 @@ def plot(data, project, method,
         vmin = 0
         vmax = 5
         title = "\n".join(
-        wrap(f'{method} {constrained} {season.lower()} temperature projections (degC) - {percentile} percentile projected changes for 2050 with respect to present-day climate', 60)
+        wrap(f'{method} {constrained} {season.lower()} temperature projections (degC) - {percentile}th percentile projected changes for 2050 with respect to present-day climate', 60)
         )
 
-    cs = data[variable].plot(cmap=cmap, vmin=vmin, vmax=vmax, ax=ax, add_colorbar=False)
+    cs = data[variable].plot(cmap=cmap, vmin=vmin, vmax=vmax, ax=ax, x='longitude', y='latitude', add_colorbar=False)
     cbar = fig.colorbar(cs, extend='both', orientation='vertical',
                         shrink=0.8, pad=0.08, spacing="uniform")
     cbar.ax.tick_params(labelsize=20)
