@@ -21,3 +21,14 @@ items:
 - question: Where can I find more information?
   answer: Please view the references section below for more on the background research behind this Atlas. For more on the EUCP project, please head to our website. This Atlas has been produced by Work Package 2 of EUCP, which is described in more detail here.
   isActive: false
+
+- question: Can I use these figures
+  answer: Yes. The images are licences under a CC-BY licence, which means you are free to use them, but please acknowledge the source.
+  isActive: false
+
+- question: I'd like to cite the Atlas in my paper, how can I do this?
+  answer: Great! The Atlas will have its own DOI. Citation information will follow soon
+  isActive: false
+
+- question: Is the data available as well
+  answer: We're still polishing it, but we're planning to publish the data on Zenodo soon.
