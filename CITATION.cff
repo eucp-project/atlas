@@ -6,7 +6,7 @@ title: EUCP Atlas of constrained climate projections
 keywords:
   - climate
   - EUCP
-repository-code: "https://github.com/eWaterCycle/ewatercycle"
+repository-code: "https://github.com/eucp-project/atlas"
 license: "Apache-2.0"
 message: "If you use this software, please cite it using these metadata."
 cff-version: "1.2.0"
