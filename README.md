@@ -10,6 +10,12 @@ Horizon2020 project. For more info, see the [Atlas about page](https://eucp-proj
 To cite this repository, use the information avialable at [FIXME](FIXME),
 and to cite the content of the Atlas, see the [Atlas references page]FIXME.
 
+## License
+
+The source code is licensed under [Apache 2.0](./LICENSE), whereas the content
+e.g. maps in the `static` directory of this repository, are licensed under
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
 ## Maintainers
 
 Current maintainers of the Atlas are Research software engineers from the
