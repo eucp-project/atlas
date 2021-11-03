@@ -5,16 +5,16 @@
         About: frequently asked questions
       </h1>
     </div>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center m-4 gap-4">
       <div v-for="(item, index) in questions" :key="index" class="w-1/2">
         <span>
-          <h1 class="m-2 text-xl prose" role="button" @click="toggle(item)">
+          <h1 class="text-xl prose" role="button" @click="toggle(item)">
             {{ item.question }}
             <font-awesome-icon v-if="item.isActive" :icon="['fas', 'angle-up']" />
             <font-awesome-icon v-else :icon="['fas', 'angle-down']" />
           </h1>
         </span>
-        <nuxt-content v-show="item.isActive" :document="item" class="m-2 prose" />
+        <nuxt-content v-show="item.isActive" :document="item" class="prose" />
       </div>
     </div>
   </div>
