@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="flex place-content-center bg-gray-100 m-3">
-      <h1 class="text-xl p-3 align-middle">
-        FAQ
+      <h1 class="text-xl m-3 align-middle">
+        About: frequently asked questions
       </h1>
     </div>
     <div class="flex flex-col items-center">
-      <div v-for="(item, index) in questions" :key="index" class="p-2 w-1/2 m-2">
+      <div v-for="(item, index) in questions" :key="index" class="w-1/2">
         <span>
           <h1 class="m-2 text-xl" role="button" @click="toggle(item)">
             {{ item.question }}
@@ -14,15 +14,7 @@
             <font-awesome-icon v-else :icon="['fas', 'angle-down']" />
           </h1>
         </span>
-        <p v-show="item.isActive" class="m-2">
-          {{ item.answer }}
-        </p>
-        <img
-          v-show="item.isActive"
-          v-if="!!item.figure"
-          :src="item.figure"
-          alt=""
-        >
+        <nuxt-content v-show="item.isActive" :document="item" class="m-2" />
       </div>
     </div>
   </div>
@@ -36,8 +28,8 @@ export default {
     }
   },
   async mounted () {
-    const questions = await this.$content('items').fetch()
-    this.questions = questions.items.map(obj => ({ ...obj, isActive: false }))
+    const questions = await this.$content('questions').sortBy('sort').fetch()
+    this.questions = questions.map(obj => ({ ...obj, isActive: false }))
   },
   methods: {
     toggle (item) {
