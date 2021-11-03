@@ -10,7 +10,6 @@ items:
     project the future. This process is known as ‘constraint’ and can affect the
     results given by an ensemble of climate simulations by ruling out the poorer
     simulations.
-  isActive: false
 
 - question: What are the differences between the methods?
   answer: >
@@ -25,7 +24,6 @@ items:
     table includes the key characteristics of the different methods and is
     reprinted from Brunner et al. (2020), which contains more information on the
     differences between these methods.
-  isActive: false
   figure: methods.png
 
 - question: What do the percentiles mean?
@@ -36,7 +34,6 @@ items:
     50% of the climate projections. The 10th percentile of precipitation
     projections may show significant drying, while the 90th percentile might show
     much wetter conditions.
-  isActive: false
 
 - question: Which method is best?
   answer: >
@@ -52,7 +49,6 @@ items:
     however, that all the constraint methods used in the Atlas confer some
     improvement over unconstrained projections for summer temperature, and
     strongly related variables, and most provide improvements for all regions.
-  isActive: false
 
 - question: Where can I find more information?
   answer: >
@@ -60,22 +56,18 @@ items:
     behind this Atlas. For more on the EUCP project, please head to our website.
     This Atlas has been produced by Work Package 2 of EUCP, which is described
     in more detail here.
-  isActive: false
 
 - question: Can I use these figures
   answer: >
     Yes. The images are licences under a CC-BY licence, which means you are free
     to use them, but please acknowledge the source.
-  isActive: false
 
 - question: I'd like to cite the Atlas in my paper, how can I do this?
   answer: >
     Great! The Atlas will have its own DOI. Citation information will follow
     soon
-  isActive: false
 
 - question: Is the data available as well?
   answer: >
     We're still polishing it, but we're planning to publish the data on Zenodo
     soon.
-  isActive: false

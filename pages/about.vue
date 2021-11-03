@@ -6,7 +6,7 @@
       </h1>
     </div>
     <div class="flex flex-col items-center">
-      <div v-for="(item, index) in questions.items" :key="index" class="p-2 w-1/2 m-2">
+      <div v-for="(item, index) in questions" :key="index" class="p-2 w-1/2 m-2">
         <span>
           <h1 class="m-2 text-xl" role="button" @click="toggle(item)">
             {{ item.question }}
@@ -32,12 +32,12 @@
 export default {
   data () {
     return {
-      questions: {}
+      questions: []
     }
   },
   async mounted () {
     const questions = await this.$content('items').fetch()
-    this.questions = questions
+    this.questions = questions.items.map(obj => ({ ...obj, isActive: false }))
   },
   methods: {
     toggle (item) {
