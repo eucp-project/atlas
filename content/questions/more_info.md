@@ -4,16 +4,17 @@ sort: 10
 ---
 
 Please view the references section below for more on the background research
-behind this Atlas. For more on the EUCP project, please head to our website.
-This Atlas has been produced by Work Package 2 of EUCP, which is described
-in more detail here.
+behind this Atlas. For more on the EUCP project, please head to [our
+website](https://www.eucp-project.eu/). This Atlas has been produced by Work
+Package 2 of EUCP, which is described in more detail
+[here](https://www.eucp-project.eu/the-project/work-packages-wps/wp-2/).
 
 The following paper provides an overview including all methods:
 
 * [Comparing Methods to Constrain Future European Climate Projections Using a
   Consistent Framework](https://doi.org/10.1175/JCLI-D-19-0953.1)
 
-For the individual methods, the following reference provide more information:
+For the individual methods, the following references provide more information:
 
 * REA (CNRM/CNRS):
     * [Making climate projections conditional on historical observation](https://doi.org/10.1126/sciadv.abc0671)
