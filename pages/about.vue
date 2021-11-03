@@ -14,7 +14,7 @@
             <font-awesome-icon v-else :icon="['fas', 'angle-down']" />
           </h1>
         </span>
-        <nuxt-content v-show="item.isActive" :document="item" class="m-2" />
+        <nuxt-content v-show="item.isActive" :document="item" class="prose" />
       </div>
     </div>
   </div>
