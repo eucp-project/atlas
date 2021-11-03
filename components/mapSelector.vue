@@ -82,8 +82,7 @@ export default {
     this.selectedSeason = parts[4]
     this.selectedDataset = parts[5]
     this.selectedPercentile = parseInt(parts[6].slice(0, 2))
-    this.selectedConstrained = parts[7].slice(0, parts[7].length - 4)
-    console.log(this.selectedConstrained)
+    this.selectedConstrained = parts[7].startsWith('uncons') ? 'uncons' : 'cons'
   }
 }
 </script>
