@@ -2,6 +2,7 @@
   "name": "wp2_atlas",
   "version": "1.0.0",
   "private": true,
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -12,7 +13,12 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
     "@nuxt/content": "^1.14.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3"
   },
