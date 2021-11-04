@@ -16,7 +16,9 @@
       :style="{backgroundImage: `url(${bgImage})`}"
     >
       <p class="absolute bottom-6 left-1/3 text-center text-sm">
-        Figures can be used under a CC-BY 4.0 licence,
+        Figures can be used under a
+        <a href="https://creativecommons.org/licenses/by/4.0/"> CC-BY 4.0 licence.
+        </a>
         see More info on how to cite.
       </p>
       <a href="https://creativecommons.org/licenses/by/4.0/">
