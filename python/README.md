@@ -40,7 +40,3 @@ model data.
 
 - [Preview map of relative precipitation](maps_prototype_prec.ipynb)
 - [Preview map of temperature](maps_prototype_tas.ipynb)
-
-This notebook generates a placeholder map that can be used on the Atlas page.
-
-- [Placeholder map](maps_placeholder.ipynb)
