@@ -13,7 +13,7 @@ see the [Atlas about page](https://eucp-project.github.io/atlas/about).
 ## Citation
 
 To cite this repository, use the information avialable at [CITATION.cff](CITATION.cff),
-and to cite the content of the Atlas, see the [Atlas references page]FIXME.
+and to cite the content of the Atlas, see the [Atlas about page](https://eucp-project.github.io/atlas/about).
 
 ## License
 
