@@ -8,7 +8,7 @@ propose new features.
 
 ## Add maps to the Atlas
 
-The maps shown in Atlas are created using the data available at [FIXME](FIXME),
+The maps shown in Atlas are created using the data available at [Zenodo](https://zenodo.org/record/5645154),
 and are stored in `.png` format in the [assets](./assets) directory of this
 repository. You can use the scripts and notebooks as examples to develop a new
 script for your own data.
