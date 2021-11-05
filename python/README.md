@@ -1,31 +1,40 @@
-## Python script to plot maps for Atlas
+# Processing data with Python (notebooks)
 
-The scripts and notebooks contained in this folder are used to generate content for Atlas page. They are made for the following purposes:
+In this folder all scripts and notebooks are stored that are used to pre-process
+data and to generate the maps in the Atlas.
 
-- Preprocess model outputs (.nc) and prepare the data for plotting
-- Plot maps in a uniform way based on the preprocessed netcdf files
+## Requirements
 
-The model outputs are preprocessed and saved as netcdf4 files, following the format:
-**coordinates:**
-- lon (lon) (float64) [-10, ..., 40]
-- lat (lat) (float64) [30, ..., 75]
-- percentile (percentile) (int64) [10, 25, 50, 75, 90]
-- constrained (constrained) (int64) [1, 0]
-- season (season) (object) ['DJF', 'JJA']
+The dependencies of the notebooks and scripts can be installed in a Conda environment with
 
-**variables**
-- tas (season, constrained, percentile, lat, lon) (float64)
-- pr (season, constrained, percentile, lat, lon) (float64)
+```shell
+# From this directory
+conda install mamba -n base -c conda-forge -y
+mamba env create --file environment.yml
+conda activate atlas
+```
 
-The folder contains multiple files to handle these tasks:
+## Preprocess netCDF data
 
-*Preprocess netCDF data from different models with different methods*
-- [`Preprocess ETHZ-ClimWIP data`](cleanup_ETHZ_ClimWIP_atlas_netcdf.ipynb)
-- [`Preprocess IPSL-REA data`](cleanup_IPSL_REA_atlas_netcdf_.ipynb)
+- [Preprocess CNRM-KCC data](cleanup_CNRM_KCC_atlas_netcdf.ipynb)
+- [Preprocess Edinburgh University ASK data](cleanup_EdinU_ASK_atlas_netcdf.ipynb)
+- [Preprocess ETHZ-ClimWIP data](cleanup_ETHZ_ClimWIP_atlas_netcdf.ipynb)
+- [Preprocess IPSL-REA data](cleanup_IPSL_REA_atlas_netcdf.ipynb)
+- [Preprocess UKMO-UKCP data](cleanup_UKMO_UKCP_atlas_netcdf.ipynb)
+- [Preprocess University of Reading CALL data](cleanup_UoR_CALL_atlas_netcdf.ipynb)
 
-*Plot maps using preprocessed data (batch processing)*
-- [`Plot maps`](maps_creator_atlas_data.py)
+## Plot maps
 
-*Tweak plot settings and preview maps using raw model data*
-- [`Preview map of relative precipitation`](maps_prototype_prec.ipynb)
-- [`Preview map of temperature`](maps_prototype_tas.ipynb)
+- [Plot maps using pre-processed data](maps_creator_atlas_data.py) (batch processing)
+
+## Additional notebooks
+
+These notebooks can be used to tweak plot settings and preview maps using raw
+model data.
+
+- [Preview map of relative precipitation](maps_prototype_prec.ipynb)
+- [Preview map of temperature](maps_prototype_tas.ipynb)
+
+This notebook generates a placeholder map that can be used on the Atlas page.
+
+- [Placeholder map](maps_placeholder.ipynb)
