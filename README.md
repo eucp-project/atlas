@@ -7,7 +7,7 @@ Horizon2020 project. For more info, see the [Atlas about page](https://eucp-proj
 
 ## Citation
 
-To cite this repository, use the information avialable at [FIXME](FIXME),
+To cite this repository, use the information avialable at [CITATION.cff](CITATION.cff),
 and to cite the content of the Atlas, see the [Atlas references page]FIXME.
 
 ## License
