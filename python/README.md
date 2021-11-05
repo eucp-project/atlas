@@ -23,9 +23,15 @@ conda activate atlas
 - [Preprocess UKMO-UKCP data](cleanup_UKMO_UKCP_atlas_netcdf.ipynb)
 - [Preprocess University of Reading CALL data](cleanup_UoR_CALL_atlas_netcdf.ipynb)
 
-## Plot maps
+The output of the notebooks are saved to `./AtlasData/preprocess`. 
 
-- [Plot maps using pre-processed data](maps_creator_atlas_data.py) (batch processing)
+## Create maps
+
+Create maps using pre-processed data and `maps_creator_atlas_data.py` script:
+
+```shell
+python ./atlas/python/maps_creator_atlas_data.py --inputdir "./AtlasData/preprocess" --outputdir "./atlas/assets/processed_figures"
+```
 
 ## Additional notebooks
 
