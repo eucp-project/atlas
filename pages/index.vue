@@ -21,6 +21,15 @@
         class="bg-center bg-no-repeat bg-contain flex-grow"
         :style="{backgroundImage: `url(${map.path})`}"
       >
+        <p class="absolute bottom-8 left-1/4 text-center text-sm">
+          Figures can be used under a
+          <a href="https://creativecommons.org/licenses/by/4.0/"> CC-BY 4.0 licence.
+          </a>
+          see <NuxtLink :to="`/about`" class="hover:text-blue-400 underline">ABOUT</NuxtLink> on how to cite the Atlas.
+        </p>
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          <img class="absolute bottom-8 right-1/3" src="~/static/ccby_logo.png" alt="CC BY Logo">
+        </a>
         <!-- <p v-if="maps.length>1" class="text-xl m-24"> {{ getLetter(id) }} </p> -->
       </span>
     </div>
