@@ -1,0 +1,14 @@
+---
+name: atlas
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.7
+  - cartopy
+  - iris
+  - matplotlib
+  - netCDF4
+  - numpy
+  - pathlib
+  - xarray
+  - jupyterlab
