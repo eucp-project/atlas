@@ -15,41 +15,16 @@ script for your own data.
 
 ### Processing data and preparing plots
 
-Content for the Atlas page is generated in multiple steps:
+Content for the Atlas page is generated in two steps:
 
-- Preprocess data to clean netCDF files
-- Plot maps in a uniform way based on the clean data files
+1. Preprocess data to clean NetCDF files
+2. Create maps in a uniform way based on the preprocessed data files
 
 The scripts that perform these actions are stored in the [python](./python)
-directory.
+directory. For more instructions, see [README](./python/README.md).
 
 When adding a new script or notebook, please place a short description in the
 [README](./python/README.md) of this directory.
-
-### Clean data
-
-The clean data has a netCDF4 format, and follows the following standards:
-
-#### coordinates
-
-- lon (lon) (float64) [-10, ..., 40]
-- lat (lat) (float64) [30, ..., 75]
-- percentile (percentile) (int64) [10, 25, 50, 75, 90]
-- constrained (constrained) (int64) [1, 0]
-- season (season) (object) ['DJF', 'JJA']
-
-#### variables
-
-- tas (season, constrained, percentile, lat, lon) (float64)
-- pr (season, constrained, percentile, lat, lon) (float64)
-
-### Plots
-
-To generate uniform data plots, the python script
-[`maps_creator_atlas_data.py`](python/maps_creator_atlas_data.py) is used.
-
-To add a new plot to the Atlas, save the image to the [assets](./assets)
-directory, and add a reference in [FIXME].
 
 ## Edit the Atlas pages
 
