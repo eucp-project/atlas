@@ -12,6 +12,36 @@ message: "If you use this software, please cite it using these metadata."
 cff-version: "1.2.0"
 authors:
   -
+    family-names: Kalverla
+    given-names: Peter
+    orcid: "https://orcid.org/0000-0002-5025-7862"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Alidoost
+    given-names: Fakhereh
+    orcid: "https://orcid.org/0000-0001-8407-6472"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Liu
+    given-names: Yang
+    orcid: "https://orcid.org/0000-0002-1966-8460"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Verhoeven
+    given-names: Stefan
+    orcid: "https://orcid.org/0000-0002-5821-2060"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Vreede
+    given-names: Barbara
+    orcid: "https://orcid.org/0000-0002-5023-4601"
+    affiliation: "Netherlands eScience Center"
+  -
+    family-names: Booth
+    given-names: Ben
+    orcid: "https://orcid.org/0000-0002-0715-2141"
+    affiliation: UK Met Office
+  -
     family-names: Coppola
     given-names: Erika
     orcid: "https://orcid.org/0000-0001-6944-5815"
@@ -26,11 +56,6 @@ authors:
     given-names: Lukas
     orcid: "https://orcid.org/0000-0001-5760-4524"
     affiliation: ETH Zurich
-  -
-    family-names: Booth
-    given-names: Ben
-    orcid: "https://orcid.org/0000-0002-0715-2141"
-    affiliation: UK Met Office
   -
     family-names: Harris
     given-names: Glen
@@ -76,29 +101,4 @@ authors:
     given-names: Hylke
     orcid: "https://orcid.org/0000-0002-6124-1102"
     affiliation: Royal Netherlands Meteorological Institute (KNMI)
-  -
-    family-names: Kalverla
-    given-names: Peter
-    orcid: "https://orcid.org/0000-0002-5025-7862"
-    affiliation: "Netherlands eScience Center"
-  -
-    family-names: Alidoost
-    given-names: Fakhereh
-    orcid: "https://orcid.org/0000-0001-8407-6472"
-    affiliation: "Netherlands eScience Center"
-  -
-    family-names: Liu
-    given-names: Yang
-    orcid: "https://orcid.org/0000-0002-1966-8460"
-    affiliation: "Netherlands eScience Center"
-  -
-    family-names: Verhoeven
-    given-names: Stefan
-    orcid: "https://orcid.org/0000-0002-5821-2060"
-    affiliation: "Netherlands eScience Center"
-  -
-    family-names: Vreede
-    given-names: Barbara
-    orcid: "https://orcid.org/0000-0002-5023-4601"
-    affiliation: "Netherlands eScience Center"
 ...
