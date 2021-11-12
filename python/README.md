@@ -26,7 +26,7 @@ per each `institute`-`method`:
 - [Preprocess CNRM-KCC data](cleanup_CNRM_KCC_atlas_netcdf.ipynb)
 - [Preprocess EdinU-ASK data](cleanup_EdinU_ASK_atlas_netcdf.ipynb)
 - [Preprocess ETHZ-ClimWIP data](cleanup_ETHZ_ClimWIP_atlas_netcdf.ipynb)
-- [Preprocess IPSL-REA data](cleanup_IPSL_REA_atlas_netcdf.ipynb)
+- [Preprocess ICTP-REA data](cleanup_ICTP_REA_atlas_netcdf.ipynb)
 - [Preprocess UKMO-UKCP data](cleanup_UKMO_UKCP_atlas_netcdf.ipynb)
 - [Preprocess UoR-CALL data](cleanup_UoR_CALL_atlas_netcdf.ipynb)
 
