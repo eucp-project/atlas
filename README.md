@@ -13,7 +13,7 @@ see the [Atlas about page](https://eucp-project.github.io/atlas/about).
 
 ## Citation
 
-To cite this repository, use the information avialable at [CITATION.cff](CITATION.cff),
+To cite this repository, use the information available at [CITATION.cff](CITATION.cff),
 and to cite the content of the Atlas, see the [Atlas about page](https://eucp-project.github.io/atlas/about).
 
 ## License
@@ -32,7 +32,7 @@ best to help you.
 
 ## Contributions
 
-For information on how to contribute to this atlas, please check the
+For information on how to contribute to this Atlas, please check the
 [contributing guidelines](CONTRIBUTING.md).
 
 ## Acknowledgements
