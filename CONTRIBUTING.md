@@ -89,7 +89,7 @@ candidate release, and amend the version tag with `rc` and the candidate number.
 
 ### Release on Zenodo
 
-Confirm the new release on [Zenodo]((FIXME). (TBD)
+Confirm the new release on [Zenodo](https://zenodo.org/record/5654741).
 
 ### Release on the Research Software Directory
 
