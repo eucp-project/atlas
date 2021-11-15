@@ -28,7 +28,7 @@ per each `institute`-`method`:
 - [Preprocess ETHZ-ClimWIP data](cleanup_ETHZ_ClimWIP_atlas_netcdf.ipynb)
 - [Preprocess ICTP-REA data](cleanup_ICTP_REA_atlas_netcdf.ipynb)
 - [Preprocess UKMO-UKCP data](cleanup_UKMO_UKCP_atlas_netcdf.ipynb)
-- [Preprocess Uoxf-CALL data](cleanup_Uoxf_CALL_atlas_netcdf.ipynb)
+- [Preprocess UOxf-CALL data](cleanup_UOxf_CALL_atlas_netcdf.ipynb)
 
 To run a notebook, you only need to specify the path to raw data as `datapath`
 and a path to store the output as `output_path`. Defaults are:
