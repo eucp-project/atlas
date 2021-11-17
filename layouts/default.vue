@@ -11,7 +11,7 @@
         <NuxtLink :to="`/`" class="hover:text-blue-400">HOME</NuxtLink>
         <NuxtLink :to="`/about`" class="hover:text-blue-400">ABOUT</NuxtLink>
         <NuxtLink :to="`/examples`" class="hover:text-blue-400" >EXAMPLES</NuxtLink>
-        <a href="https://zenodo.org/record/5645154" class="hover:text-blue-400" >DOWNLOAD DATA</a>
+        <a href="https://doi.org/10.5281/zenodo.5645153" class="hover:text-blue-400" >DOWNLOAD DATA</a>
       </div>
     </div>
     <Nuxt class="m-4 h-full" />
