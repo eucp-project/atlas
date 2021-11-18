@@ -70,6 +70,9 @@ def plot(data, project, method,
     Plot relative precipitation and temperature using cartopy.
     """
 
+    # time periods info
+    periods = "projected changes between 2041-2060 mean conditions with respect to the 1995-2014 baseline"
+
     # plot fig
     fig = plt.figure(figsize=(12.8, 9.6))
     ax = plt.axes(projection=ccrs.PlateCarree())
@@ -92,7 +95,7 @@ def plot(data, project, method,
         vmin = -50
         vmax = 50
         title = "\n".join(
-          wrap(f'{method} {constrained} {season.lower()} relative precipitation projections (%) - {percentile}th percentile projected changes for 2050 with respect to present-day climate', 60)
+          wrap(f'{method} {constrained} {season.lower()} relative precipitation projections (%) - {percentile}th percentile {periods}', 60)
             )
     elif 'tas' in list(data.keys()):
         variable = 'tas'
@@ -100,7 +103,7 @@ def plot(data, project, method,
         vmin = 0
         vmax = 5
         title = "\n".join(
-        wrap(f'{method} {constrained} {season.lower()} temperature projections (degC) - {percentile}th percentile projected changes for 2050 with respect to present-day climate', 60)
+        wrap(f'{method} {constrained} {season.lower()} temperature projections (degC) - {percentile}th percentile {periods}', 60)
         )
 
     cs = data[variable].plot(cmap=cmap, vmin=vmin, vmax=vmax, ax=ax, x='longitude', y='latitude', add_colorbar=False)
