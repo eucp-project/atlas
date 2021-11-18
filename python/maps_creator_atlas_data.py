@@ -71,7 +71,7 @@ def plot(data, project, method,
     """
 
     # time periods info
-    periods = "projected changes between 2041-2060 mean conditions with respect to the 1995-2014 present-day baseline"
+    periods = "projected changes between 2041-2060 mean conditions with respect to the 1995-2014 baseline"
 
     # plot fig
     fig = plt.figure(figsize=(12.8, 9.6))
