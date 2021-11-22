@@ -16,7 +16,6 @@ unconstrained projections in northern Europe but not in the Mediterranean
 region.
 ![summary of skills](summary_skill.png)
 
-All methods show improvements in some regions, for temperature projections where
-as there is less evidence that they improve precipitation projections.  One
+All methods show improvements in some regions for temperature projections, whereas there is less evidence that they improve precipitation projections.  One
 method, CALL, produces projections for the Mediterranean that are markedly worse
 than just using the raw climate model projections.
