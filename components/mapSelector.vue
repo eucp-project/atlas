@@ -44,7 +44,7 @@ export default {
         ASK: 'ASK',
         CALL: 'CALL',
         ClimWIP: 'ClimWIP',
-        HistC: 'HistC',
+        KCC: 'KCC',
         REA: 'REA',
         UKCP: 'UKCP'
       },
