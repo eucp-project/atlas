@@ -103,6 +103,6 @@ authors:
     affiliation: Royal Netherlands Meteorological Institute (KNMI)
 identifiers:
   - type: doi
-    value: 'https://doi.org/10.5281/zenodo.5654740'
+    value: '10.5281/zenodo.5654740'
     description: The concept DOI of the work.
 ...
